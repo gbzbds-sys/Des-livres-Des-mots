@@ -3180,3 +3180,561 @@ body::before{
     max-width: 100%;
   }
 }
+
+
+/* =========================================================
+   V16 — QUASI FINALE / POLISH
+   1) bloc livres du hero mieux placé + halo renforcé
+   2) rythmes verticaux resserrés
+   3) hovers uniformisés
+   ========================================================= */
+
+:root{
+  --final-hover-lift: -7px;
+  --final-hover-shadow: 0 24px 52px rgba(49,42,33,.14);
+  --final-hover-shadow-strong: 0 28px 60px rgba(49,42,33,.18);
+}
+
+/* ---------- 1) HERO : livres un peu plus centrés + halo plus présent ---------- */
+.hero {
+  padding: 76px 0 68px;
+}
+.hero__grid {
+  gap: 42px !important;
+  min-height: 540px;
+}
+.hero::before {
+  background:
+    radial-gradient(circle at 76% 34%, rgba(194,163,101,.13), transparent 28%),
+    radial-gradient(circle at 78% 48%, rgba(39,70,56,.07), transparent 20%);
+}
+.hero::after {
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:6%;
+  top:38px;
+  border-radius:50%;
+  pointer-events:none;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.32) 0%, rgba(255,255,255,.12) 38%, rgba(205,139,114,.06) 58%, transparent 73%);
+  filter: blur(2px);
+  opacity:.95;
+}
+.hero__visual {
+  height: 500px;
+}
+.hero__visual .ambient--one {
+  width: 430px;
+  height: 430px;
+  right: 2%;
+  top: 8%;
+  background: rgba(39,70,56,.10);
+  filter: blur(8px);
+}
+.hero__visual .ambient--two {
+  width: 260px;
+  height: 260px;
+  left: 20%;
+  bottom: 2%;
+  background: rgba(183,110,80,.10);
+  filter: blur(6px);
+}
+.book-stage {
+  transform: translateX(-24px);
+}
+.hero__visual:hover .book-stage {
+  transform: translateX(-24px) translateY(-2px);
+}
+
+/* ---------- 2) RYTHMES VERTICAUX : sections plus fluides ---------- */
+.section {
+  padding: 92px 0;
+}
+.section-head {
+  margin-bottom: 34px;
+}
+.story-section {
+  padding: 92px 0;
+}
+.quote-section {
+  padding: 0 0 90px;
+}
+.contact-section {
+  padding: 92px 0;
+}
+.newsletter {
+  padding: 30px 0;
+}
+.footer {
+  padding-top: 56px;
+}
+@media (max-width: 900px) {
+  .section,
+  .story-section,
+  .contact-section {
+    padding: 76px 0;
+  }
+  .quote-section {
+    padding: 0 0 72px;
+  }
+}
+
+/* ---------- 3) HOVERS UNIFORMISÉS : même logique, même intensité ---------- */
+
+/* Boutons */
+.btn {
+  transition:
+    transform .30s cubic-bezier(.16,.84,.24,1),
+    box-shadow .30s ease,
+    background .30s ease,
+    color .30s ease;
+}
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(39,70,56,.16);
+}
+
+/* Liens de navigation */
+.nav a {
+  transition:
+    transform .28s cubic-bezier(.16,.84,.24,1),
+    box-shadow .28s ease,
+    background .28s ease,
+    color .28s ease;
+}
+.nav a:hover,
+.nav a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(49,42,33,.07);
+}
+
+/* Cartes globales */
+.book-card__visual,
+.category,
+.space-card,
+.hero-stat-card,
+.trust-strip__grid > div,
+.info-card,
+.newsletter__inner {
+  transition:
+    transform .34s cubic-bezier(.16,.84,.24,1),
+    box-shadow .34s ease,
+    filter .34s ease,
+    background .34s ease,
+    border-color .34s ease;
+}
+
+.book-card:hover .book-card__visual,
+.book-card:focus-within .book-card__visual {
+  transform: translateY(var(--final-hover-lift));
+  box-shadow: var(--final-hover-shadow-strong);
+}
+.book-card:hover .mini-cover,
+.book-card:focus-within .mini-cover {
+  transform: scale(1.04) rotate(-0.9deg);
+}
+
+.category:hover,
+.category:focus-within {
+  transform: translateY(var(--final-hover-lift)) rotate(0.8deg);
+  box-shadow: var(--final-hover-shadow);
+}
+
+.space-card:hover,
+.space-card:focus-within {
+  transform: translateY(var(--final-hover-lift)) scale(1.01);
+  box-shadow: var(--final-hover-shadow-strong);
+}
+
+.hero-stat-card:hover,
+.hero-stat-card:focus-visible {
+  transform: translateY(var(--final-hover-lift)) rotate(0.6deg);
+  box-shadow: var(--final-hover-shadow);
+}
+.hero-stat-card:nth-child(even):hover,
+.hero-stat-card:nth-child(even):focus-visible {
+  transform: translateY(var(--final-hover-lift)) rotate(-0.6deg);
+}
+
+.trust-strip__grid > div:hover,
+.trust-strip__grid > div:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(119,100,87,.10);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 56px rgba(112,93,80,.12);
+}
+
+.newsletter__inner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 56px rgba(112,92,79,.12);
+}
+
+/* Livres du hero : garde l'effet vivant mais plus cohérent */
+.book {
+  transition:
+    transform .42s cubic-bezier(.16,.84,.24,1),
+    filter .34s ease;
+}
+.book--back:hover {
+  transform: translate3d(-16px,-12px,16px) rotate(-13deg) scale(1.028) !important;
+}
+.book--middle:hover {
+  transform: translate3d(16px,-12px,20px) rotate(11deg) scale(1.028) !important;
+}
+.book--front:hover {
+  transform: translate3d(-50%,-15px,44px) rotate(-2.5deg) scale(1.03) !important;
+}
+
+/* un peu plus de respiration du texte hero */
+.hero__lead {
+  line-height: 1.78;
+}
+.hero__actions {
+  margin-top: 24px;
+}
+
+/* Mobile polish */
+@media (max-width: 1180px) {
+  .book-stage {
+    transform: translateX(-10px) scale(.97);
+  }
+  .hero__visual:hover .book-stage {
+    transform: translateX(-10px) translateY(-2px) scale(.97);
+  }
+}
+@media (max-width: 980px) {
+  .hero {
+    padding: 64px 0 58px;
+  }
+  .hero__grid {
+    gap: 28px !important;
+  }
+  .hero::after {
+    width: 380px;
+    height: 380px;
+    right: 2%;
+    top: 60px;
+  }
+  .book-stage {
+    transform: translateX(0) scale(.92);
+  }
+  .hero__visual:hover .book-stage {
+    transform: translateX(0) translateY(-2px) scale(.92);
+  }
+}
+@media (max-width: 680px) {
+  .hero {
+    padding: 56px 0 50px;
+  }
+  .section,
+  .story-section,
+  .contact-section {
+    padding: 66px 0;
+  }
+  .hero::after {
+    width: 250px;
+    height: 250px;
+    right: 0;
+    top: 100px;
+  }
+}
+
+
+/* =========================================================
+   V17 — LIVRABLE FINAL
+   ultra propre / sans surplus / prêt à livrer
+   ========================================================= */
+
+:root{
+  --deliver-hover-lift: -5px;
+  --deliver-shadow-soft: 0 18px 40px rgba(49,42,33,.10);
+  --deliver-shadow-card: 0 22px 48px rgba(49,42,33,.12);
+  --deliver-shadow-card-strong: 0 24px 54px rgba(49,42,33,.14);
+  --deliver-transition: .26s cubic-bezier(.16,.84,.24,1);
+}
+
+/* ---------- Nettoyage global ---------- */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+.site-header {
+  box-shadow: 0 10px 24px rgba(105,87,74,.05);
+}
+.hero,
+.section,
+.story-section,
+.contact-section,
+.newsletter,
+.footer {
+  position: relative;
+}
+
+/* ---------- Hero : plus propre, plus respirant ---------- */
+.hero {
+  padding: 70px 0 64px !important;
+}
+.hero__grid {
+  gap: 38px !important;
+  min-height: 520px !important;
+}
+.hero::before {
+  background:
+    radial-gradient(circle at 76% 35%, rgba(194,163,101,.11), transparent 26%),
+    radial-gradient(circle at 80% 48%, rgba(39,70,56,.05), transparent 18%) !important;
+}
+.hero::after {
+  width: 460px !important;
+  height: 460px !important;
+  right: 7% !important;
+  top: 46px !important;
+  opacity: .78 !important;
+}
+.hero__visual {
+  height: 490px !important;
+}
+.hero__visual .ambient--one {
+  width: 400px !important;
+  height: 400px !important;
+  right: 5% !important;
+  top: 12% !important;
+  opacity: .72;
+}
+.hero__visual .ambient--two {
+  width: 220px !important;
+  height: 220px !important;
+  left: 22% !important;
+  bottom: 6% !important;
+  opacity: .72;
+}
+.book-stage {
+  transform: translateX(-18px) !important;
+}
+.hero__visual:hover .book-stage {
+  transform: translateX(-18px) translateY(-2px) !important;
+}
+.hero__lead {
+  max-width: 640px;
+  line-height: 1.74 !important;
+}
+.hero__actions {
+  margin-top: 22px !important;
+}
+.hero__chips {
+  margin: 16px 0 4px !important;
+}
+.hero__chips span {
+  box-shadow: 0 8px 18px rgba(123,103,88,.06);
+}
+
+/* ---------- Espacements verticaux uniformisés ---------- */
+.section,
+.story-section,
+.contact-section {
+  padding: 84px 0 !important;
+}
+.section-head {
+  margin-bottom: 30px !important;
+}
+.quote-section {
+  padding: 0 0 82px !important;
+}
+.newsletter {
+  padding: 26px 0 !important;
+}
+.footer {
+  padding-top: 52px !important;
+}
+
+/* ---------- Hovers : plus subtils et plus cohérents ---------- */
+.btn,
+.nav a,
+.book-card__visual,
+.category,
+.space-card,
+.hero-stat-card,
+.trust-strip__grid > div,
+.info-card,
+.newsletter__inner,
+.book,
+.floating-card {
+  transition:
+    transform var(--deliver-transition),
+    box-shadow var(--deliver-transition),
+    filter var(--deliver-transition),
+    background var(--deliver-transition),
+    border-color var(--deliver-transition);
+}
+
+/* boutons */
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 30px rgba(39,70,56,.14) !important;
+}
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  box-shadow: var(--deliver-shadow-soft) !important;
+}
+
+/* navigation */
+.nav a:hover,
+.nav a:focus-visible {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 10px 20px rgba(49,42,33,.05) !important;
+}
+
+/* cartes */
+.book-card:hover .book-card__visual,
+.book-card:focus-within .book-card__visual {
+  transform: translateY(var(--deliver-hover-lift)) !important;
+  box-shadow: var(--deliver-shadow-card) !important;
+}
+.book-card:hover .mini-cover,
+.book-card:focus-within .mini-cover {
+  transform: scale(1.03) rotate(-0.8deg) !important;
+}
+
+.category:hover,
+.category:focus-within {
+  transform: translateY(var(--deliver-hover-lift)) rotate(0.6deg) !important;
+  box-shadow: var(--deliver-shadow-card) !important;
+}
+
+.space-card:hover,
+.space-card:focus-within {
+  transform: translateY(var(--deliver-hover-lift)) scale(1.008) !important;
+  box-shadow: var(--deliver-shadow-card-strong) !important;
+}
+
+.hero-stat-card:hover,
+.hero-stat-card:focus-visible {
+  transform: translateY(var(--deliver-hover-lift)) rotate(0.4deg) !important;
+  box-shadow: var(--deliver-shadow-card) !important;
+}
+.hero-stat-card:nth-child(even):hover,
+.hero-stat-card:nth-child(even):focus-visible {
+  transform: translateY(var(--deliver-hover-lift)) rotate(-0.4deg) !important;
+}
+
+.trust-strip__grid > div:hover,
+.trust-strip__grid > div:focus-within {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 38px rgba(119,100,87,.08) !important;
+}
+
+.info-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 22px 46px rgba(112,93,80,.10) !important;
+}
+
+.newsletter__inner:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 18px 42px rgba(112,92,79,.09) !important;
+}
+
+.floating-card:hover {
+  transform: translateY(-3px) scale(1.01) !important;
+}
+
+/* livres du hero : vivant mais mieux maîtrisé */
+.hero__visual:hover .book--back {
+  transform: translate3d(-8px,-7px,8px) rotate(-10deg) !important;
+}
+.hero__visual:hover .book--middle {
+  transform: translate3d(8px,-7px,14px) rotate(8deg) !important;
+}
+.hero__visual:hover .book--front {
+  transform: translate3d(-50%,-10px,36px) rotate(-1.2deg) !important;
+}
+.book--back:hover {
+  transform: translate3d(-13px,-10px,14px) rotate(-12deg) scale(1.02) !important;
+}
+.book--middle:hover {
+  transform: translate3d(13px,-10px,18px) rotate(10deg) scale(1.02) !important;
+}
+.book--front:hover {
+  transform: translate3d(-50%,-12px,40px) rotate(-2deg) scale(1.022) !important;
+}
+.book:hover {
+  filter: drop-shadow(0 24px 46px rgba(46,39,31,.16));
+}
+
+/* ---------- Ombres et cartes : version livrable ---------- */
+.info-card,
+.newsletter__inner,
+.book-card__visual,
+.category,
+.hero-stat-card,
+.trust-strip__grid > div {
+  border-color: rgba(30,36,32,.07) !important;
+}
+.info-card,
+.newsletter__inner {
+  box-shadow: var(--deliver-shadow-soft) !important;
+}
+.space-card {
+  box-shadow: 0 20px 44px rgba(49,42,33,.13) !important;
+}
+.quote-card {
+  box-shadow: 0 26px 62px rgba(39,70,56,.18) !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1180px) {
+  .book-stage {
+    transform: translateX(-8px) scale(.98) !important;
+  }
+  .hero__visual:hover .book-stage {
+    transform: translateX(-8px) translateY(-2px) scale(.98) !important;
+  }
+}
+@media (max-width: 980px) {
+  .hero {
+    padding: 60px 0 54px !important;
+  }
+  .hero__grid {
+    gap: 24px !important;
+  }
+  .hero::after {
+    width: 340px !important;
+    height: 340px !important;
+    right: 2% !important;
+    top: 66px !important;
+  }
+  .book-stage {
+    transform: translateX(0) scale(.93) !important;
+  }
+  .hero__visual:hover .book-stage {
+    transform: translateX(0) translateY(-2px) scale(.93) !important;
+  }
+  .section,
+  .story-section,
+  .contact-section {
+    padding: 74px 0 !important;
+  }
+}
+@media (max-width: 680px) {
+  .hero {
+    padding: 52px 0 46px !important;
+  }
+  .hero::after {
+    width: 230px !important;
+    height: 230px !important;
+    top: 108px !important;
+  }
+  .section,
+  .story-section,
+  .contact-section {
+    padding: 62px 0 !important;
+  }
+  .quote-section {
+    padding: 0 0 66px !important;
+  }
+}

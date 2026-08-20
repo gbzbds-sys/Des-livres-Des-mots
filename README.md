@@ -220,3 +220,24 @@ Améliorations visuelles majeures :
 - meilleure respiration visuelle ;
 - équilibre amélioré entre le texte à gauche et les livres à droite ;
 - le mot “lire” reste bien mis en valeur.
+
+
+## V16 — Quasi finale
+
+Finitions appliquées :
+- bloc des livres du hero légèrement rapproché du centre ;
+- halo / ambiance renforcés derrière les livres ;
+- rythmes verticaux resserrés pour une lecture plus fluide ;
+- hovers uniformisés sur les boutons, cartes et éléments interactifs ;
+- rendu plus cohérent, plus maîtrisé, plus finalisé.
+
+
+## V17 — Livrable final
+
+Dernière passe de finition :
+- hero allégé et mieux équilibré ;
+- halo et bloc livres plus propres, sans surcharge ;
+- espacements verticaux uniformisés ;
+- hovers rendus plus subtils et cohérents ;
+- ombres et intensités harmonisées ;
+- version pensée pour être propre, stable et prête à livrer.
