@@ -44,26 +44,26 @@ window.LIBRARY_CONTENT = {
 
   spaces: [
     {
-      name: "Des livres, Des mots",
+      name: "Terrasse thé & café",
       icon: "☕",
       label: "Pause détente",
-      color: "linear-gradient(145deg,#6f5a48,#43352d)",
-      description: "Une terrasse conviviale pour savourer un thé ou un café, discuter tranquillement et profiter d'un vrai moment de détente autour des livres.",
-      features: ["Terrasse extérieure", "Thé & café sur place", "Ambiance calme et chaleureuse"]
+      color: "linear-gradient(145deg,#b08b79,#8f6c5c)",
+      description: "Une terrasse conviviale pour savourer un thé ou un café, discuter tranquillement et profiter d’un vrai moment de détente autour des livres.",
+      features: ["Terrasse extérieure", "Thé & café sur place", "Ambiance douce et chaleureuse"]
     },
     {
-      name: "Des livres, Des mots",
+      name: "Salon lecture intérieur",
       icon: "📖",
       label: "Lecture sur place",
-      color: "linear-gradient(145deg,#486357,#2d433a)",
-      description: "Un espace lecture intérieur confortable pour feuilleter, s'installer et découvrir les ouvrages dans une atmosphère douce et soignée.",
+      color: "linear-gradient(145deg,#7fa08e,#5f8070)",
+      description: "Un espace lecture intérieur confortable pour feuilleter, s’installer et découvrir les ouvrages dans une atmosphère calme et soignée.",
       features: ["Fauteuils confortables", "Coin lecture apaisant", "Découverte des nouveautés"]
     },
     {
-      name: "Des livres, Des mots",
+      name: "Espace enfant",
       icon: "🧸",
       label: "Famille & jeunesse",
-      color: "linear-gradient(145deg,#b98663,#8e5d42)",
+      color: "linear-gradient(145deg,#d0a186,#b98369)",
       description: "Un coin pensé pour les plus jeunes avec une sélection jeunesse, un espace adapté et une ambiance accueillante pour les familles.",
       features: ["Coin enfant dédié", "Sélection jeunesse", "Moment lecture en famille"]
     }

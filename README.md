@@ -86,3 +86,13 @@ Pour finaliser sans placeholders :
 - prix ou mention “prix en librairie” ;
 - services précis : commande, réservation, click & collect, ateliers, dédicaces, etc. ;
 - éventuels événements à venir.
+
+
+## V4 Pastel
+
+Cette version ajoute :
+- une palette plus pastel et plus douce ;
+- davantage d’ombres premium ;
+- des cartes plus chaleureuses pour la librairie ;
+- des contrastes plus cohérents avec le logo ;
+- correction des titres de la section "Les espaces".
