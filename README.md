@@ -213,3 +213,10 @@ Améliorations visuelles majeures :
 - droite = penche davantage à droite ;
 - centre = monte légèrement et reste mis en avant ;
 - petit reflet premium au survol.
+
+
+## V15 — titre hero
+- titre principal légèrement réduit ;
+- meilleure respiration visuelle ;
+- équilibre amélioré entre le texte à gauche et les livres à droite ;
+- le mot “lire” reste bien mis en valeur.
