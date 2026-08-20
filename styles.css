@@ -4100,3 +4100,125 @@ body {
     height: 82px;
   }
 }
+
+
+/* =========================================================
+   V22 — CORRECTIF FINAL THEMES CONTACT
+   ========================================================= */
+
+.contact-modal.contact-modal--help {
+  --contact-accent:#8d86b9 !important;
+  --contact-accent-soft:rgba(141,134,185,.18) !important;
+  --contact-btn-start:#a9a2d2 !important;
+  --contact-btn-end:#8179ad !important;
+}
+.contact-modal.contact-modal--premium {
+  --contact-accent:#b17c47 !important;
+  --contact-accent-soft:rgba(177,124,71,.18) !important;
+  --contact-btn-start:#d2a06c !important;
+  --contact-btn-end:#9f6a3c !important;
+}
+.contact-modal.contact-modal--order {
+  --contact-accent:#648d72 !important;
+  --contact-accent-soft:rgba(100,141,114,.18) !important;
+  --contact-btn-start:#83aa91 !important;
+  --contact-btn-end:#587a63 !important;
+}
+
+.contact-modal.contact-modal--help .contact-modal__card {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(196,190,227,.22), transparent 28%),
+    linear-gradient(180deg,#fffdfd 0%,#f7f4fb 100%) !important;
+}
+.contact-modal.contact-modal--premium .contact-modal__card {
+  background:
+    radial-gradient(circle at 14% 12%, rgba(229,197,151,.24), transparent 30%),
+    linear-gradient(180deg,#fffdf9 0%,#f8efe4 100%) !important;
+  border-color:rgba(190,148,101,.30) !important;
+}
+.contact-modal.contact-modal--order .contact-modal__card {
+  background:
+    radial-gradient(circle at 14% 12%, rgba(148,184,160,.22), transparent 28%),
+    linear-gradient(180deg,#fbfffc 0%,#eef6f0 100%) !important;
+}
+
+.contact-modal__head {
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:18px !important;
+}
+.contact-modal__mark {
+  position:relative !important;
+  width:92px !important;
+  min-width:92px !important;
+  height:92px !important;
+  border-radius:26px !important;
+  display:grid !important;
+  place-items:center !important;
+  background:rgba(255,255,255,.72) !important;
+  border:1px solid rgba(222,210,199,.72) !important;
+  box-shadow:0 16px 34px rgba(89,72,61,.10) !important;
+}
+.contact-modal__mark img {
+  width:58px !important;
+  height:58px !important;
+  border-radius:18px !important;
+  object-fit:cover !important;
+}
+.contact-modal__icon {
+  position:absolute !important;
+  right:-6px !important;
+  bottom:-6px !important;
+  width:36px !important;
+  height:36px !important;
+  display:grid !important;
+  place-items:center !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  border:1px solid rgba(220,205,193,.74) !important;
+  box-shadow:0 10px 24px rgba(89,72,61,.12) !important;
+}
+.contact-modal__headcopy small {
+  color:var(--contact-accent) !important;
+  font-weight:800 !important;
+  letter-spacing:.15em !important;
+}
+.contact-modal__headcopy h3 {
+  margin:7px 0 8px !important;
+}
+.contact-modal__intro {
+  margin:0 !important;
+  max-width:620px !important;
+  color:var(--muted) !important;
+  font-size:10px !important;
+  line-height:1.7 !important;
+}
+
+.contact-modal .contact-form input:focus,
+.contact-modal .contact-form textarea:focus {
+  outline:none !important;
+  border-color:var(--contact-accent) !important;
+  box-shadow:0 0 0 4px var(--contact-accent-soft) !important;
+}
+
+.contact-modal .contact-send-btn {
+  background:linear-gradient(135deg,var(--contact-btn-start),var(--contact-btn-end)) !important;
+  color:#fff !important;
+  border-color:transparent !important;
+  box-shadow:0 18px 36px color-mix(in srgb, var(--contact-btn-end) 24%, transparent) !important;
+}
+.contact-modal .contact-send-btn:hover {
+  transform:translateY(-3px) !important;
+  box-shadow:0 24px 46px color-mix(in srgb, var(--contact-btn-end) 30%, transparent) !important;
+}
+
+.contact-modal.contact-modal--premium .contact-modal__mark {
+  background:linear-gradient(145deg,#fffdf8,#f5e8d6) !important;
+  box-shadow:0 18px 38px rgba(161,112,65,.14) !important;
+}
+.contact-modal.contact-modal--order .contact-modal__mark {
+  background:linear-gradient(145deg,#fbfffc,#e7f1ea) !important;
+}
+.contact-modal.contact-modal--help .contact-modal__mark {
+  background:linear-gradient(145deg,#fff,#f0edf8) !important;
+}

@@ -269,3 +269,12 @@ Ajouts :
 - **Partenariat** : rendu plus premium, plus institutionnel ;
 - **Commande / retrait** : tonalité plus pratique, plus logistique ;
 - boutons, couleurs d’accent, halo, ombres, intro et icône adaptés à chaque type de demande.
+
+
+## V22 — correctif thèmes contact
+- correction réelle de la logique JavaScript des 3 formulaires ;
+- le thème change désormais vraiment à l’ouverture ;
+- **Information / anomalie** : violet doux / support ;
+- **Partenariat** : doré / crème / premium ;
+- **Commande / retrait** : vert / logistique ;
+- kicker, intro, icône et texte du bouton changent également selon le formulaire.

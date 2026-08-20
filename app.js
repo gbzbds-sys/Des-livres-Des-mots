@@ -360,8 +360,58 @@ function validateCollect(){if(!$("#collectName").value.trim()||!$("#collectEmail
 function orderText(){const sum=entries().reduce((x,i)=>x+i.price*i.qty,0);return ['Bonjour,','','Je souhaite effectuer un retrait en boutique.','',...entries().map(i=>`- ${i.title} × ${i.qty} — ${euro(i.price*i.qty)}`),`Total estimé : ${euro(sum)}`,'',`Nom : ${$("#collectName").value}`,`Email : ${$("#collectEmail").value}`,`Téléphone : ${$("#collectPhone").value}`,`Jour : ${$("#collectPickupDay").value}`,`Message : ${$("#collectMessage").value}`].join('\n')}
 $("#collectEmailOrderBtn")?.addEventListener('click',()=>{if(!validateCollect())return;const r=C.shop.orderEmail||C.shop.contactEmail;if(!r){toast('Renseigne orderEmail dans content.js.');return}location.href=`mailto:${r}?subject=${encodeURIComponent('Click & Collect — nouvelle demande')}&body=${encodeURIComponent(orderText())}`});
 $("#collectPayBtn")?.addEventListener('click',()=>{if(!validateCollect())return;if(!C.shop.paymentUrl){toast('Renseigne paymentUrl dans content.js.');return}window.open(C.shop.paymentUrl,'_blank','noopener,noreferrer')});
-const modes={information:{title:'Information / anomalie',email:'contactEmail',subject:'Demande d’information / anomalie'},partenariat:{title:'Proposer un partenariat',email:'partnershipEmail',subject:'Proposition de partenariat'},commande:{title:'Commande / retrait',email:'orderEmail',subject:'Question concernant une commande'}};let activeMode='information';
-$$('[data-contact-type]').forEach(b=>b.addEventListener('click',()=>{activeMode=b.dataset.contactType;const m=modes[activeMode],x=$("#contactModal");$("#contactFormTitle").textContent=m.title;$("#contactSubject").value=m.subject;x.classList.add('open');x.setAttribute('aria-hidden','false');document.body.classList.add('no-scroll')}));$$('[data-contact-close]').forEach(x=>x.addEventListener('click',()=>{$("#contactModal").classList.remove('open');document.body.classList.remove('no-scroll')}));
+const modes={
+information:{
+title:'Information / anomalie',
+email:'contactEmail',
+subject:'Demande d’information / anomalie',
+kicker:'AIDE & CONTACT',
+intro:'Une question, un problème sur le site, une disponibilité à vérifier ou une anomalie à signaler ? Cet espace est pensé comme un vrai support.',
+icon:'💬',
+theme:'contact-modal--help',
+button:'Préparer le message'
+},
+partenariat:{
+title:'Proposer un partenariat',
+email:'partnershipEmail',
+subject:'Proposition de partenariat',
+kicker:'COLLABORATION PREMIUM',
+intro:'Auteur, association, école, entreprise ou projet local : présentez votre proposition dans un espace plus premium et professionnel.',
+icon:'🤝',
+theme:'contact-modal--premium',
+button:'Préparer la proposition'
+},
+commande:{
+title:'Commande / retrait',
+email:'orderEmail',
+subject:'Question concernant une commande',
+kicker:'SUIVI DE COMMANDE',
+intro:'Une question sur une commande Click & Collect, un retrait en boutique ou une disponibilité ? Cet espace est dédié au suivi pratique de votre commande.',
+icon:'📦',
+theme:'contact-modal--order',
+button:'Préparer la demande'
+}
+};let activeMode='information';
+$$('[data-contact-type]').forEach(b=>b.addEventListener('click',()=>{
+activeMode=b.dataset.contactType;
+const m=modes[activeMode],x=$("#contactModal");
+$("#contactFormTitle").textContent=m.title;
+$("#contactFormKicker").textContent=m.kicker;
+$("#contactFormIntro").textContent=m.intro;
+$("#contactFormIcon").textContent=m.icon;
+$("#contactSubject").value=m.subject;
+$("#contactSendBtn").innerHTML=`${m.button} <span>→</span>`;
+x.classList.remove('contact-modal--help','contact-modal--premium','contact-modal--order');
+x.classList.add(m.theme,'open');
+x.setAttribute('aria-hidden','false');
+document.body.classList.add('no-scroll')
+}));
+$$('[data-contact-close]').forEach(x=>x.addEventListener('click',()=>{
+const modal=$("#contactModal");
+modal.classList.remove('open','contact-modal--help','contact-modal--premium','contact-modal--order');
+modal.setAttribute('aria-hidden','true');
+document.body.classList.remove('no-scroll')
+}));
 $("#contactSendBtn")?.addEventListener('click',()=>{const m=modes[activeMode],r=C.shop[m.email]||C.shop.contactEmail,n=$("#contactName").value.trim(),e=$("#contactEmail").value.trim(),msg=$("#contactMessage").value.trim();if(!r){toast('Renseigne l’adresse email correspondante dans content.js.');return}if(!n||!e||!msg){toast('Merci de remplir nom, email et message.');return}location.href=`mailto:${r}?subject=${encodeURIComponent($("#contactSubject").value||m.subject)}&body=${encodeURIComponent(`Bonjour,\n\n${msg}\n\nNom : ${n}\nEmail : ${e}`)}`});
 $("#joinClubBtn")?.addEventListener('click',()=>{$("#clubModal").classList.add('open');document.body.classList.add('no-scroll')});$$('[data-club-close]').forEach(x=>x.addEventListener('click',()=>{$("#clubModal").classList.remove('open');document.body.classList.remove('no-scroll')}));
 $("#clubSendBtn")?.addEventListener('click',()=>{const r=C.shop.clubEmail||C.shop.contactEmail,n=$("#clubName").value.trim(),e=$("#clubEmail").value.trim();if(!r){toast('Renseigne clubEmail dans content.js.');return}if(!n||!e){toast('Merci de renseigner nom et email.');return}location.href=`mailto:${r}?subject=${encodeURIComponent('Demande d’inscription — Club de lecture')}&body=${encodeURIComponent(`Bonjour,\n\nJe souhaite rejoindre le club de lecture.\n\nNom : ${n}\nEmail : ${e}\nStyle préféré : ${$("#clubGenre").value}\nMessage : ${$("#clubMessage").value}`)}`});

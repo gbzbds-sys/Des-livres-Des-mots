@@ -660,7 +660,17 @@
   <div class="modal contact-modal" id="contactModal" aria-hidden="true">
     <div class="modal__backdrop" data-contact-close></div><div class="modal__card contact-modal__card">
       <button class="round-btn modal__close" data-contact-close aria-label="Fermer">×</button>
-      <div class="contact-modal__head"><img src="logo-angelique-a.png" alt="Logo"><div><small id="contactFormKicker">CONTACT</small><h3 id="contactFormTitle">Nous écrire</h3></div></div>
+      <div class="contact-modal__head">
+        <div class="contact-modal__mark">
+          <img src="logo-angelique-a.png" alt="Logo Des livres, Des mots">
+          <span class="contact-modal__icon" id="contactFormIcon">💬</span>
+        </div>
+        <div class="contact-modal__headcopy">
+          <small id="contactFormKicker">AIDE & CONTACT</small>
+          <h3 id="contactFormTitle">Information / anomalie</h3>
+          <p class="contact-modal__intro" id="contactFormIntro">Décrivez votre demande, nous préparons votre email automatiquement.</p>
+        </div>
+      </div>
       <div class="contact-form"><label>Nom et prénom<input id="contactName" type="text"></label><label>Email<input id="contactEmail" type="email"></label><label>Sujet<input id="contactSubject" type="text"></label><label>Votre message<textarea id="contactMessage" rows="7"></textarea></label></div>
       <button class="btn btn--primary contact-send-btn" id="contactSendBtn" type="button">Préparer l’email <span>→</span></button>
       <p class="contact-form__note">Le bouton ouvre votre application mail avec le destinataire, le sujet et le message déjà remplis.</p>
