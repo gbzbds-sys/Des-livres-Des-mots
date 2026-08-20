@@ -193,7 +193,7 @@ $("#searchClose").addEventListener("click",closeSearch);
 $("#searchOverlay").addEventListener("click",e=>{ if(e.target===$("#searchOverlay")) closeSearch(); });
 $("#searchInput").addEventListener("input",e=>renderSearch(e.target.value));
 $$("[data-modal-close]").forEach(el=>el.addEventListener("click",closeBook));
-document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); closeHoursModal(); closeLegalModal(); }});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); closeHoursModal(); closeLegalModal(); announcementItems.forEach(i => { i.classList.remove("is-open"); i.setAttribute("aria-expanded","false"); }); }});
 
 $("#menuBtn").addEventListener("click",()=>$("#mobileNav").classList.toggle("open"));
 $$(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>$("#mobileNav").classList.remove("open")));
@@ -266,4 +266,31 @@ if (legalModal) {
     if (e.target === legalModal) closeLegalModal();
   });
 }
+
+
+
+const announcementItems = $$(".announcement-item");
+announcementItems.forEach(item => {
+  item.addEventListener("click", e => {
+    const alreadyOpen = item.classList.contains("is-open");
+    announcementItems.forEach(i => {
+      i.classList.remove("is-open");
+      i.setAttribute("aria-expanded", "false");
+    });
+    if (!alreadyOpen) {
+      item.classList.add("is-open");
+      item.setAttribute("aria-expanded", "true");
+    }
+    e.stopPropagation();
+  });
+});
+
+document.addEventListener("click", e => {
+  if (!e.target.closest(".announcement-item")) {
+    announcementItems.forEach(i => {
+      i.classList.remove("is-open");
+      i.setAttribute("aria-expanded", "false");
+    });
+  }
+});
 

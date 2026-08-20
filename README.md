@@ -159,3 +159,10 @@ Le site actuel est un site vitrine. Si paiement, achat en ligne ou livraison son
 
 ## Correctif logo bloc librairie
 - Remplacement de l’icône maison par le vrai logo officiel dans le bloc de contact / adresse.
+
+
+## V9 bandeau interactif
+- Le bandeau du haut devient vivant et pratique.
+- Chaque élément ouvre un descriptif au survol.
+- Sur mobile / clic, le descriptif s’ouvre aussi au tap.
+- Le bandeau garde le style premium du site.
