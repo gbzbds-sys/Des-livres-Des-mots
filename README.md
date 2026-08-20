@@ -259,3 +259,13 @@ Dernière passe de finition :
 - Formulaires qui préparent un email.
 - Club de lecture avec inscription.
 - À renseigner dans content.js : contactEmail, partnershipEmail, orderEmail, clubEmail, paymentUrl.
+
+
+## V21 — différenciation des formulaires contact
+
+Ajouts :
+- style différent pour chaque carte et chaque formulaire de contact ;
+- **Information / anomalie** : ambiance aide / support, plus douce et rassurante ;
+- **Partenariat** : rendu plus premium, plus institutionnel ;
+- **Commande / retrait** : tonalité plus pratique, plus logistique ;
+- boutons, couleurs d’accent, halo, ombres, intro et icône adaptés à chaque type de demande.

@@ -3863,3 +3863,240 @@ body {
 }
 
 .clickcollect-section{background:linear-gradient(180deg,#fbf7f2,#f4e9df)}.collect-layout{display:grid;grid-template-columns:1.45fr .65fr;gap:24px;align-items:start}.collect-products,.collect-cart{border:1px solid rgba(219,200,186,.62);background:rgba(255,255,255,.7);border-radius:30px;box-shadow:0 22px 52px rgba(114,95,80,.1);padding:22px}.collect-products__head,.collect-cart__head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.collect-products__head h3,.collect-cart__head h3{font-family:var(--font-display);font-size:28px;margin:4px 0 0}.collect-products__head small,.collect-cart__head small,.club-feature__badge{font-size:8px;letter-spacing:.14em;color:var(--muted)}.collect-count{padding:8px 10px;border-radius:999px;background:rgba(127,157,142,.12);font-size:9px}.collect-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.collect-product{background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:22px;padding:13px;transition:.3s}.collect-product:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(114,95,80,.1)}.collect-product__cover{min-height:185px;border-radius:17px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}.collect-product__cover small{font-size:8px}.collect-product__cover strong{font-family:var(--font-display);font-size:24px;line-height:1.05}.collect-product__meta>div{display:flex;justify-content:space-between;gap:10px;margin:11px 0}.collect-product__meta strong,.collect-product__meta span{font-size:10px}.collect-add-btn{width:100%}.collect-cart{position:sticky;top:126px}.collect-cart__empty{text-align:center;padding:24px 12px;background:rgba(249,241,233,.7);border-radius:18px}.collect-cart__empty strong,.collect-cart__empty span{display:block}.collect-cart__empty span{font-size:9px;color:var(--muted);margin-top:5px}.collect-cart__items{display:grid;gap:8px}.collect-cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px;border-radius:14px;background:#fff;border:1px solid var(--line)}.collect-cart-item strong,.collect-cart-item span{display:block;font-size:9px}.collect-cart-item span{color:var(--muted);margin-top:3px}.collect-cart-item__qty{display:flex;align-items:center;gap:6px}.collect-cart-item__qty button{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);background:#fff}.collect-cart__total{display:flex;justify-content:space-between;padding:16px 0 12px;margin-top:12px;border-top:1px solid var(--line)}.collect-checkout-btn{width:100%;justify-content:center}.collect-checkout-btn:disabled{opacity:.45}.collect-note{font-size:8px;line-height:1.5;color:var(--muted)}.collect-modal__card,.contact-modal__card,.club-modal__card{width:min(640px,calc(100% - 28px));max-height:84vh;overflow:auto;padding:26px;border-radius:28px}.collect-modal__head,.contact-modal__head{display:flex;align-items:center;gap:12px;margin-bottom:18px}.collect-modal__head img,.contact-modal__head img{width:52px;height:52px;object-fit:cover;border-radius:15px}.collect-modal__head h3,.contact-modal__head h3{font-family:var(--font-display);font-size:28px;margin:4px 0 0}.collect-summary{display:grid;gap:7px;margin-bottom:16px}.collect-summary>div{display:flex;justify-content:space-between;padding:9px 11px;border-radius:12px;background:#fff;font-size:9px}.collect-form,.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:11px}.collect-form label,.contact-form label{display:grid;gap:5px;font-size:9px;color:var(--muted)}.collect-form label:has(textarea),.contact-form label:has(textarea),.collect-consent{grid-column:1/-1}.collect-form input,.collect-form select,.collect-form textarea,.contact-form input,.contact-form select,.contact-form textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:11px}.collect-modal__actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.contact-portal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0 6px}.contact-type-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;padding:13px;border:1px solid var(--line);background:rgba(255,255,255,.65);border-radius:18px;text-align:left;cursor:pointer;transition:.3s}.contact-type-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(114,95,80,.09)}.contact-type-card strong,.contact-type-card small{display:block}.contact-type-card strong{font-size:10px}.contact-type-card small{font-size:8px;color:var(--muted);margin-top:3px}.contact-send-btn{width:100%;justify-content:center;margin-top:14px}.contact-form__note{font-size:8px;color:var(--muted);text-align:center}.club-section{background:linear-gradient(180deg,#fbf6f0,#f3e7dc)}.club-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.club-copy h2{font-family:var(--font-display);font-size:clamp(38px,4.8vw,67px);line-height:1}.club-copy>p{color:var(--muted);line-height:1.8}.club-points{display:grid;gap:9px;margin:22px 0}.club-points>div{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:12px 13px;border-radius:16px;background:rgba(255,255,255,.65);border:1px solid var(--line)}.club-points span{grid-row:1/3;color:var(--clay)}.club-points strong{font-size:10px}.club-points small{font-size:9px;color:var(--muted)}.club-feature{padding:24px;border-radius:30px;background:linear-gradient(145deg,#55745f,#3f5d4d);color:#fff}.club-book{display:grid;place-items:center;padding:22px 0}.club-book__cover{width:220px;min-height:300px;padding:24px;border-radius:8px 20px 20px 8px;background:linear-gradient(145deg,#c78367,#9d5e49);display:flex;flex-direction:column;justify-content:flex-end}.club-book__cover strong{font-family:var(--font-display);font-size:27px;line-height:1.03;margin:10px 0}.club-feature__info{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid rgba(255,255,255,.12);padding-top:14px}.club-feature__info span,.club-feature__info strong{display:block;font-size:9px}.club-feature__info span{opacity:.65}@media(max-width:980px){.collect-layout,.club-grid{grid-template-columns:1fr}.collect-cart{position:static}.contact-portal{grid-template-columns:1fr}}@media(max-width:680px){.collect-grid,.collect-form,.contact-form{grid-template-columns:1fr}.collect-form label,.contact-form label{grid-column:1/-1}.collect-modal__actions{flex-direction:column}}
+
+
+/* =========================
+   V21 — THEMES CONTACT
+   ========================= */
+
+.contact-type-card[data-contact-type="information"] {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(201, 190, 224, .16), transparent 20%),
+    rgba(255,255,255,.68);
+}
+.contact-type-card[data-contact-type="information"]:hover {
+  box-shadow: 0 18px 38px rgba(145, 134, 180, .13);
+}
+
+.contact-type-card[data-contact-type="partenariat"] {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(216, 188, 145, .18), transparent 22%),
+    rgba(255,255,255,.7);
+}
+.contact-type-card[data-contact-type="partenariat"]:hover {
+  box-shadow: 0 18px 42px rgba(158, 121, 76, .13);
+}
+
+.contact-type-card[data-contact-type="commande"] {
+  background:
+    radial-gradient(circle at 14% 18%, rgba(132, 171, 149, .18), transparent 22%),
+    rgba(255,255,255,.7);
+}
+.contact-type-card[data-contact-type="commande"]:hover {
+  box-shadow: 0 18px 42px rgba(76, 113, 92, .12);
+}
+
+.contact-modal {
+  --contact-accent: #8aa2b4;
+  --contact-accent-soft: rgba(138, 162, 180, .16);
+  --contact-accent-strong: rgba(138, 162, 180, .28);
+  --contact-btn-start: #96a6bb;
+  --contact-btn-end: #72879b;
+}
+
+.contact-modal__card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(223, 213, 204, .72);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.9), rgba(252,248,243,.92));
+  box-shadow: 0 36px 80px rgba(49, 42, 33, .14);
+}
+
+.contact-modal__card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 190px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 18%, var(--contact-accent-soft), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.24), transparent 100%);
+}
+
+.contact-modal__card::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -80px;
+  top: -110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--contact-accent-soft) 0%, transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.contact-modal__head {
+  position: relative;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.contact-modal__mark {
+  position: relative;
+  width: 92px;
+  min-width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(255,255,255,.84), rgba(248,241,234,.82));
+  border: 1px solid rgba(225, 214, 206, .72);
+  box-shadow: 0 18px 36px rgba(121, 99, 82, .10);
+}
+
+.contact-modal__mark img {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.contact-modal__icon {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(223, 213, 204, .72);
+  box-shadow: 0 10px 24px rgba(49, 42, 33, .12);
+  font-size: 18px;
+}
+
+.contact-modal__headcopy {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-modal__headcopy small {
+  color: var(--contact-accent);
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.contact-modal__headcopy h3 {
+  margin: 8px 0 8px;
+  line-height: .98;
+}
+
+.contact-modal__intro {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.contact-form label {
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--contact-accent);
+  box-shadow: 0 0 0 4px var(--contact-accent-soft);
+  background: rgba(255,255,255,.96);
+}
+
+.contact-send-btn {
+  background: linear-gradient(135deg, var(--contact-btn-start), var(--contact-btn-end));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 18px 36px color-mix(in srgb, var(--contact-btn-end) 24%, transparent);
+}
+
+.contact-send-btn:hover,
+.contact-send-btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px color-mix(in srgb, var(--contact-btn-end) 30%, transparent);
+}
+
+.contact-form__note {
+  color: color-mix(in srgb, var(--contact-accent) 42%, #6d655e);
+}
+
+/* Aide / anomalie */
+.contact-modal--help {
+  --contact-accent: #8e8ab8;
+  --contact-accent-soft: rgba(142, 138, 184, .16);
+  --contact-accent-strong: rgba(142, 138, 184, .28);
+  --contact-btn-start: #a8a5cf;
+  --contact-btn-end: #8b88b4;
+}
+.contact-modal--help .contact-modal__card {
+  background:
+    radial-gradient(circle at 10% 14%, rgba(196, 190, 227, .14), transparent 22%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(249,246,252,.95));
+}
+
+/* Partenariat premium */
+.contact-modal--premium {
+  --contact-accent: #b48457;
+  --contact-accent-soft: rgba(180, 132, 87, .14);
+  --contact-accent-strong: rgba(180, 132, 87, .26);
+  --contact-btn-start: #c79868;
+  --contact-btn-end: #9f6f47;
+}
+.contact-modal--premium .contact-modal__card {
+  background:
+    radial-gradient(circle at 12% 15%, rgba(227, 197, 154, .16), transparent 24%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(251,246,240,.96));
+}
+.contact-modal--premium .contact-modal__mark {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.9), rgba(249,238,224,.88));
+  box-shadow: 0 22px 44px rgba(153, 111, 71, .12);
+}
+.contact-modal--premium .contact-modal__card::after {
+  background: radial-gradient(circle, rgba(210, 169, 117, .18) 0%, transparent 70%);
+}
+
+/* Commande / retrait */
+.contact-modal--order {
+  --contact-accent: #6d9278;
+  --contact-accent-soft: rgba(109, 146, 120, .16);
+  --contact-accent-strong: rgba(109, 146, 120, .28);
+  --contact-btn-start: #88ab98;
+  --contact-btn-end: #5e7f6b;
+}
+.contact-modal--order .contact-modal__card {
+  background:
+    radial-gradient(circle at 12% 15%, rgba(132, 171, 149, .14), transparent 24%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(244,249,245,.95));
+}
+
+@media (max-width: 900px) {
+  .contact-modal__head {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .contact-modal__mark {
+    width: 82px;
+    min-width: 82px;
+    height: 82px;
+  }
+}
