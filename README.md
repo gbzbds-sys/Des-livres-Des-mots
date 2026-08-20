@@ -241,3 +241,12 @@ Dernière passe de finition :
 - hovers rendus plus subtils et cohérents ;
 - ombres et intensités harmonisées ;
 - version pensée pour être propre, stable et prête à livrer.
+
+
+## V18 — hover livres hero
+- correction du survol sur les 3 livres ;
+- effet global léger quand on entre dans la zone ;
+- effet individuel plus visible sur chaque livre ;
+- gauche et droite partent dans des sens différents ;
+- livre du milieu remonte et passe bien au premier plan ;
+- reflet plus visible au survol.
