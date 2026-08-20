@@ -668,3 +668,164 @@ body {
     padding: 18px;
   }
 }
+
+
+/* =========================
+   V5 HOVER / PAGE TURN EFFECTS
+   ========================= */
+
+/* Boutons : ombre, lumière, profondeur */
+.btn,
+.icon-btn,
+.round-btn,
+.menu-btn {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .26s cubic-bezier(.2,.8,.2,1),
+    box-shadow .26s cubic-bezier(.2,.8,.2,1),
+    background .26s ease,
+    border-color .26s ease;
+}
+
+.btn::before,
+.icon-btn::before,
+.round-btn::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -120%;
+  width: 70%;
+  height: 140%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.10) 30%, rgba(255,255,255,.42) 50%, rgba(255,255,255,.10) 70%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left .65s ease;
+  pointer-events: none;
+}
+
+.btn:hover::before,
+.icon-btn:hover::before,
+.round-btn:hover::before {
+  left: 150%;
+}
+
+.btn:hover,
+.icon-btn:hover,
+.round-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn--primary:hover {
+  box-shadow:
+    0 18px 38px rgba(95, 133, 115, .34),
+    0 6px 18px rgba(95, 133, 115, .22),
+    inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+.btn--ghost:hover {
+  box-shadow:
+    0 16px 32px rgba(144, 120, 104, .18),
+    inset 0 0 0 1px rgba(255,255,255,.65);
+}
+
+.icon-btn:hover,
+.round-btn:hover {
+  box-shadow:
+    0 14px 26px rgba(144, 120, 104, .18),
+    inset 0 0 0 1px rgba(255,255,255,.58);
+}
+
+/* Effet “page qui se tourne” sur les cartes */
+.book-card__visual,
+.category,
+.space-card,
+.info-card,
+.quote-card,
+.story-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card__visual::after,
+.category::after,
+.space-card::after,
+.info-card::after,
+.quote-card::after,
+.story-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid rgba(255,255,255,.95);
+  border-left: 0 solid transparent;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition:
+    border-top-width .34s cubic-bezier(.2,.8,.2,1),
+    border-left-width .34s cubic-bezier(.2,.8,.2,1),
+    filter .34s ease,
+    transform .34s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.book-card:hover .book-card__visual::after,
+.category:hover::after,
+.space-card:hover::after,
+.info-card:hover::after,
+.quote-card:hover::after,
+.story-frame:hover::after {
+  border-top-width: 78px;
+  border-left-width: 78px;
+  filter: drop-shadow(-5px 7px 10px rgba(0,0,0,.10));
+}
+
+.book-card:hover .book-card__visual,
+.category:hover,
+.space-card:hover,
+.info-card:hover,
+.quote-card:hover,
+.story-frame:hover {
+  transform: translateY(-8px);
+}
+
+/* Petite ombre renforcée pour accompagner le pli de page */
+.book-card__visual:hover,
+.category:hover,
+.space-card:hover,
+.info-card:hover {
+  box-shadow: 0 26px 58px rgba(125, 102, 88, .18);
+}
+
+/* Nav links plus vivants au hover */
+.nav a {
+  transition: color .22s ease, transform .22s ease;
+}
+.nav a:hover {
+  color: var(--clay);
+  transform: translateY(-1px);
+}
+
+/* Accent léger sur les liens texte */
+.text-link {
+  position: relative;
+  transition: color .22s ease, transform .22s ease;
+}
+.text-link:hover {
+  color: var(--clay);
+  transform: translateX(2px);
+}
+
+/* Mobile : pli de page un peu plus discret */
+@media (max-width: 680px) {
+  .book-card:hover .book-card__visual::after,
+  .category:hover::after,
+  .space-card:hover::after,
+  .info-card:hover::after,
+  .quote-card:hover::after,
+  .story-frame:hover::after {
+    border-top-width: 56px;
+    border-left-width: 56px;
+  }
+}

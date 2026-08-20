@@ -96,3 +96,12 @@ Cette version ajoute :
 - des cartes plus chaleureuses pour la librairie ;
 - des contrastes plus cohérents avec le logo ;
 - correction des titres de la section "Les espaces".
+
+
+## V5 Hover Effets
+
+Ajouts :
+- ombrage plus marqué au survol de chaque bouton ;
+- effet de lumière qui glisse sur les boutons au hover ;
+- effet “coin de page qui se tourne” sur les cartes principales ;
+- hover plus vivant sur la navigation et certains liens.
