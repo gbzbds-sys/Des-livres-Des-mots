@@ -204,3 +204,12 @@ Améliorations visuelles majeures :
 - textes plus lisibles ;
 - hover plus propre : les livres s’écartent légèrement ;
 - la carte horaires reste au-dessus sans gêner la composition.
+
+
+## V14 — hover vivant hero
+- effet de survol remis sur les 3 livres du hero ;
+- chaque livre part dans un sens différent ;
+- gauche = penche davantage à gauche ;
+- droite = penche davantage à droite ;
+- centre = monte légèrement et reste mis en avant ;
+- petit reflet premium au survol.

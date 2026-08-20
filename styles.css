@@ -3033,3 +3033,93 @@ body::before{
     bottom: 8px;
   }
 }
+
+
+/* =========================================================
+   V14 — HOVER VIVANT SUR LES LIVRES DU HERO
+   ========================================================= */
+
+/* On remet un vrai effet de survol vivant et différent */
+.book-stage {
+  transition: transform .45s cubic-bezier(.16,.84,.24,1);
+}
+
+.book {
+  cursor: default;
+  transform-origin: center center;
+}
+
+/* Mouvement global léger quand on passe sur la zone */
+.hero__visual:hover .book-stage {
+  transform: translateY(-2px);
+}
+
+/* Chaque livre garde sa base mais réagit différemment */
+.book--back:hover {
+  transform: translate3d(-18px,-12px,16px) rotate(-14deg) scale(1.03) !important;
+  filter: drop-shadow(0 28px 56px rgba(70, 62, 53, .20));
+}
+
+.book--middle:hover {
+  transform: translate3d(18px,-12px,22px) rotate(12deg) scale(1.03) !important;
+  filter: drop-shadow(0 28px 56px rgba(70, 62, 53, .20));
+}
+
+.book--front:hover {
+  transform: translate3d(-50%,-16px,48px) rotate(-3deg) scale(1.035) !important;
+  filter: drop-shadow(0 30px 60px rgba(70, 62, 53, .22));
+}
+
+/* Quand on survole la zone sans viser un livre précis, ils s'écartent légèrement */
+.hero__visual:hover .book--back {
+  transform: translate3d(-10px,-8px,10px) rotate(-11deg);
+}
+.hero__visual:hover .book--middle {
+  transform: translate3d(10px,-8px,18px) rotate(9deg);
+}
+.hero__visual:hover .book--front {
+  transform: translate3d(-50%,-12px,44px) rotate(-1.5deg);
+}
+
+/* Si on vise un livre précis, il passe bien devant */
+.book--back:hover,
+.book--middle:hover,
+.book--front:hover {
+  z-index: 8;
+}
+
+/* Finition plus vivante avec un petit reflet */
+.book__cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 24%, rgba(255,255,255,.12) 50%, transparent 72%);
+  transform: translateX(-125%);
+  transition: transform .85s ease;
+  pointer-events: none;
+}
+.book:hover .book__cover::after {
+  transform: translateX(125%);
+}
+
+/* Mobile : effet plus léger pour rester propre */
+@media (max-width: 680px) {
+  .hero__visual:hover .book--back {
+    transform: translate3d(-6px,-6px,8px) rotate(-10deg);
+  }
+  .hero__visual:hover .book--middle {
+    transform: translate3d(6px,-6px,12px) rotate(8deg);
+  }
+  .hero__visual:hover .book--front {
+    transform: translate3d(-50%,-8px,30px) rotate(-1deg);
+  }
+  .book--back:hover {
+    transform: translate3d(-10px,-8px,10px) rotate(-12deg) scale(1.02) !important;
+  }
+  .book--middle:hover {
+    transform: translate3d(10px,-8px,12px) rotate(10deg) scale(1.02) !important;
+  }
+  .book--front:hover {
+    transform: translate3d(-50%,-10px,34px) rotate(-2deg) scale(1.02) !important;
+  }
+}
