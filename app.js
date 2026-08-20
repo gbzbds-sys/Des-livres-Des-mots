@@ -323,3 +323,25 @@ function attachPremiumParallax(wrapperSelector, targetSelector, strength = 10) {
 attachPremiumParallax(".hero__visual", ".book-stage", 10);
 attachPremiumParallax(".story-visual", ".story-frame", 5);
 
+
+
+(function initPremiumMotion(){
+  const finePointer = window.matchMedia("(pointer:fine)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!finePointer || reduced) return;
+
+  const hoverables = $$(".book-card, .category, .space-card, .info-card");
+  hoverables.forEach((el, index) => {
+    el.addEventListener("mousemove", (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      const sign = index % 2 === 0 ? 1 : -1;
+      el.style.transform = `translateY(-8px) rotateX(${py * -2.4}deg) rotateY(${px * 3.2 * sign}deg)`;
+    });
+    el.addEventListener("mouseleave", () => {
+      el.style.transform = "";
+    });
+  });
+})();
+

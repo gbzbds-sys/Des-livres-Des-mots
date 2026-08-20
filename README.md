@@ -179,3 +179,13 @@ Améliorations visuelles majeures :
 - section contact, newsletter et footer plus luxueux ;
 - micro-mouvements de parallaxe sur les zones visuelles principales ;
 - meilleure cohérence globale entre le logo, les couleurs et les sections.
+
+
+## V11 Luxury Premium
+- rendu plus luxueux ;
+- animations plus fluides ;
+- hero plus vivant ;
+- profondeur renforcée sur les cartes ;
+- effets subtils de mouvement à la souris ;
+- finition plus haut de gamme sur header, contact, newsletter et footer ;
+- respect de `prefers-reduced-motion`.
