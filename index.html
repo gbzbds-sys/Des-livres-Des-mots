@@ -6,10 +6,7 @@
   <meta name="theme-color" content="#f4eee4" />
   <meta name="description" content="Librairie créative — nouveautés, coups de cœur, conseils et commandes." />
   <title>Des livres, Des mots — Librairie créative</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="grain"></div>
@@ -271,7 +268,13 @@
           <div><strong>Les nouvelles de la librairie</strong><small>Actualités, événements, ateliers et nouveautés de la librairie.</small></div>
         </div>
         <form id="newsletterForm" class="newsletter-form">
-          <input type="email" placeholder="Votre adresse email" required />
+          <div class="newsletter-form__fields">
+            <input type="email" placeholder="Votre adresse email" required />
+            <label class="newsletter-consent">
+              <input type="checkbox" required />
+              <span>J’accepte de recevoir les actualités de la librairie et j’ai lu la <button type="button" class="legal-inline-link" data-legal-open="privacy">politique de confidentialité</button>.</span>
+            </label>
+          </div>
           <button class="btn btn--dark" type="submit">S'inscrire <span>→</span></button>
         </form>
       </div>
@@ -293,7 +296,12 @@
     </div>
     <div class="container footer__bottom">
       <span>© <span id="year"></span> <span data-shop-name>Des livres, Des mots</span>. Tous droits réservés.</span>
-      <span>Site vitrine • Librairie créative</span>
+      <div class="footer__legal-links">
+        <button type="button" data-legal-open="mentions">Mentions légales</button>
+        <button type="button" data-legal-open="privacy">Confidentialité & RGPD</button>
+        <button type="button" data-legal-open="cookies">Cookies</button>
+        <button type="button" data-legal-open="terms">Conditions d’utilisation</button>
+      </div>
     </div>
   </footer>
 
@@ -320,16 +328,202 @@
   </div>
 
   
+  
   <div class="modal hours-modal" id="hoursModal" aria-hidden="true">
     <div class="modal__backdrop" data-hours-close></div>
     <div class="modal__card hours-modal__card">
       <button class="round-btn modal__close" data-hours-close>×</button>
+
       <div class="hours-modal__head">
-        <small>HORAIRES</small>
+        <div class="hours-modal__brand">
+          <img src="logo-angelique-a.png" alt="Logo de la librairie" class="hours-modal__logo" />
+          <div class="hours-modal__brand-copy">
+            <small>HORAIRES</small>
+            <strong>Des livres, Des mots</strong>
+          </div>
+        </div>
+
         <h3>Horaires de la librairie</h3>
-        <p>Retrouvez les horaires de la semaine pour <strong>Des livres, Des mots</strong>.</p>
+        <p>Retrouvez les horaires de la semaine de la librairie.</p>
       </div>
+
       <div class="hours-modal__grid" id="hoursModalGrid"></div>
+    </div>
+  </div>
+
+  </div>
+
+
+  
+  <div class="modal legal-modal" id="legalModal" aria-hidden="true">
+    <div class="modal__backdrop" data-legal-close></div>
+    <div class="modal__card legal-modal__card">
+      <button class="round-btn modal__close" data-legal-close aria-label="Fermer">×</button>
+
+      <div class="legal-modal__header">
+        <div class="legal-modal__brand">
+          <img src="logo-angelique-a.png" alt="Logo Des livres, Des mots" />
+          <div>
+            <small>INFORMATIONS LÉGALES</small>
+            <strong>Des livres, Des mots</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-tabs" role="tablist" aria-label="Informations légales">
+        <button class="legal-tab is-active" type="button" data-legal-tab="mentions">Mentions légales</button>
+        <button class="legal-tab" type="button" data-legal-tab="privacy">Confidentialité & RGPD</button>
+        <button class="legal-tab" type="button" data-legal-tab="cookies">Cookies</button>
+        <button class="legal-tab" type="button" data-legal-tab="terms">Utilisation</button>
+      </div>
+
+      <div class="legal-content">
+        <section class="legal-panel is-active" data-legal-panel="mentions">
+          <h3>Mentions légales</h3>
+          <p class="legal-lead">Informations relatives à l’éditeur du site <strong>Des livres, Des mots</strong>.</p>
+
+          <div class="legal-alert">
+            <strong>Informations professionnelles à compléter avant mise en ligne définitive</strong>
+            <p>Les champs marqués « à renseigner » doivent être remplacés par les informations officielles de l’entreprise.</p>
+          </div>
+
+          <div class="legal-grid">
+            <div>
+              <span>Nom commercial</span>
+              <strong>Des livres, Des mots</strong>
+            </div>
+            <div>
+              <span>Adresse de l’établissement</span>
+              <strong>4-6 rue de l’Église, 59390 Toufflers, France</strong>
+            </div>
+            <div>
+              <span>Forme juridique / raison sociale</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+            <div>
+              <span>SIREN / SIRET</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+            <div>
+              <span>RCS / RNE</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+            <div>
+              <span>Capital social</span>
+              <strong class="legal-missing">À renseigner si société</strong>
+            </div>
+            <div>
+              <span>N° TVA intracommunautaire</span>
+              <strong class="legal-missing">À renseigner si applicable</strong>
+            </div>
+            <div>
+              <span>Téléphone professionnel</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+            <div>
+              <span>Email professionnel</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+            <div>
+              <span>Directeur / directrice de la publication</span>
+              <strong class="legal-missing">À renseigner</strong>
+            </div>
+          </div>
+
+          <h4>Hébergement</h4>
+          <div class="legal-card">
+            <p><strong>Vercel Inc.</strong><br>
+            440 N Barranca Ave #4133<br>
+            Covina, CA 91723, États-Unis<br>
+            Téléphone : +1 559 288 7060<br>
+            Site : vercel.com</p>
+          </div>
+
+          <h4>Propriété intellectuelle</h4>
+          <p>Sauf mention contraire, les textes, éléments graphiques, illustrations, photographies, logo et contenus présents sur ce site sont protégés par le droit de la propriété intellectuelle. Toute reproduction, adaptation, représentation ou exploitation, totale ou partielle, sans autorisation préalable du titulaire des droits est interdite.</p>
+          <p>Les couvertures de livres, photographies d’auteurs, visuels d’éditeurs et autres contenus appartenant à des tiers restent la propriété de leurs titulaires respectifs et ne doivent être publiés qu’avec les droits ou autorisations nécessaires.</p>
+
+          <h4>Médiation de la consommation</h4>
+          <p>Si la librairie vend des biens ou services à des consommateurs, elle doit communiquer les coordonnées du médiateur de la consommation dont elle relève. <strong class="legal-missing">Médiateur à renseigner avant mise en ligne commerciale.</strong></p>
+        </section>
+
+        <section class="legal-panel" data-legal-panel="privacy">
+          <h3>Politique de confidentialité & RGPD</h3>
+          <p class="legal-lead">Cette page explique les traitements de données personnelles susceptibles d’être réalisés via le site.</p>
+
+          <h4>Responsable du traitement</h4>
+          <p>Le responsable du traitement est l’exploitant de la librairie <strong>Des livres, Des mots</strong>, 4-6 rue de l’Église, 59390 Toufflers. Les coordonnées professionnelles complètes devront être ajoutées dès qu’elles seront disponibles.</p>
+
+          <h4>Données susceptibles d’être collectées</h4>
+          <ul>
+            <li>adresse email lors d’une inscription volontaire à la newsletter ;</li>
+            <li>données transmises volontairement lors d’une demande de contact ou de réservation si ces fonctions sont activées ;</li>
+            <li>données techniques strictement nécessaires au fonctionnement et à la sécurité du site.</li>
+          </ul>
+
+          <h4>Finalités et bases légales</h4>
+          <div class="legal-table">
+            <div><strong>Newsletter</strong><span>Envoi d’actualités et informations de la librairie</span><em>Consentement</em></div>
+            <div><strong>Demandes de contact</strong><span>Répondre à une demande initiée par l’utilisateur</span><em>Mesures précontractuelles / intérêt légitime selon le cas</em></div>
+            <div><strong>Sécurité du site</strong><span>Prévenir les abus et assurer le fonctionnement technique</span><em>Intérêt légitime / nécessité technique</em></div>
+          </div>
+
+          <h4>Durées de conservation</h4>
+          <p>Les données sont conservées uniquement pendant une durée proportionnée à leur finalité. Pour la newsletter, l’adresse email doit être supprimée à la demande de désinscription ou lorsque le consentement est retiré. Les durées exactes devront être définies dans le registre interne des traitements de la librairie.</p>
+
+          <h4>Destinataires</h4>
+          <p>Les données sont accessibles uniquement aux personnes habilitées de la librairie et, si nécessaire, à ses prestataires techniques agissant comme sous-traitants. Elles ne doivent pas être vendues à des tiers.</p>
+
+          <h4>Vos droits</h4>
+          <p>Conformément au RGPD et à la loi Informatique et Libertés, vous pouvez demander l’accès, la rectification, l’effacement ou la limitation de vos données, vous opposer à certains traitements, retirer votre consentement à tout moment lorsque le traitement repose sur celui-ci, et demander la portabilité de vos données lorsque ce droit est applicable.</p>
+          <p>Pour exercer vos droits : <strong class="legal-missing">adresse email RGPD à renseigner</strong>. Vous pouvez également introduire une réclamation auprès de la CNIL.</p>
+
+          <h4>Newsletter</h4>
+          <p>L’inscription à la newsletter destinée aux particuliers repose sur un consentement libre, spécifique, éclairé et univoque. La case de consentement ne doit jamais être précochée et chaque email envoyé devra contenir un moyen simple de se désinscrire.</p>
+
+          <h4>Transferts hors Union européenne</h4>
+          <p>Le site est hébergé chez Vercel Inc., société établie aux États-Unis. L’exploitant devra vérifier et documenter les garanties contractuelles applicables à son offre d’hébergement et aux éventuels autres prestataires utilisés.</p>
+        </section>
+
+        <section class="legal-panel" data-legal-panel="cookies">
+          <h3>Politique relative aux cookies</h3>
+          <p class="legal-lead">Version actuelle du site : aucun outil publicitaire ou de suivi marketing n’est intégré.</p>
+
+          <div class="legal-success">
+            <strong>Configuration actuelle</strong>
+            <p>Le site n’intègre pas volontairement de cookie publicitaire, de pixel marketing, de réseau social embarqué ni d’outil de mesure d’audience nécessitant un consentement préalable.</p>
+          </div>
+
+          <h4>Cookies strictement nécessaires</h4>
+          <p>Des éléments techniques peuvent être nécessaires à la fourniture du site, à sa sécurité ou à son bon fonctionnement. Lorsqu’ils sont strictement nécessaires à un service demandé par l’utilisateur, ils peuvent être exemptés de consentement.</p>
+
+          <h4>Si des outils sont ajoutés plus tard</h4>
+          <p>Avant d’ajouter Google Analytics, Meta Pixel, TikTok Pixel, YouTube embarqué, cartes interactives tierces, outils publicitaires ou autres traceurs non essentiels, il faudra mettre en place un bandeau permettant de <strong>refuser aussi facilement qu’accepter</strong>, bloquer les traceurs avant consentement et permettre de modifier le choix à tout moment.</p>
+
+          <h4>Mesure d’audience</h4>
+          <p>Certains outils de mesure d’audience peuvent être exemptés de consentement uniquement s’ils respectent les conditions prévues par la CNIL, notamment une finalité strictement limitée à la mesure d’audience pour le compte exclusif de l’éditeur et la production de statistiques anonymes.</p>
+        </section>
+
+        <section class="legal-panel" data-legal-panel="terms">
+          <h3>Conditions d’utilisation du site</h3>
+          <p class="legal-lead">Le site est actuellement un site vitrine présentant la librairie, ses espaces et ses sélections.</p>
+
+          <h4>Informations présentées</h4>
+          <p>La librairie s’efforce de publier des informations exactes et à jour. Les horaires, disponibilités, prix, événements et sélections peuvent toutefois évoluer. En cas de doute, il est recommandé de contacter directement la librairie avant un déplacement ou une réservation.</p>
+
+          <h4>Commande et réservation</h4>
+          <p>Tant qu’aucun paiement n’est réalisé directement sur ce site, il ne constitue pas une boutique en ligne. Si un système de vente en ligne, paiement, retrait ou livraison est activé ultérieurement, des <strong>conditions générales de vente (CGV)</strong> adaptées devront être mises en ligne avant l’ouverture du service.</p>
+
+          <h4>Liens externes</h4>
+          <p>Le site peut renvoyer vers des services tiers, par exemple un service d’itinéraire ou des réseaux sociaux. La librairie n’est pas responsable du contenu, des pratiques ou de la disponibilité de ces services externes.</p>
+
+          <h4>Responsabilité</h4>
+          <p>La librairie ne saurait être tenue responsable d’une indisponibilité temporaire du site, d’une interruption technique, ou d’une utilisation du site contraire aux présentes conditions ou à la loi.</p>
+
+          <h4>Droit applicable</h4>
+          <p>Le site est soumis au droit français, sous réserve des dispositions impératives applicables aux consommateurs.</p>
+        </section>
+      </div>
     </div>
   </div>
 

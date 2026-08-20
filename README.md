@@ -113,3 +113,45 @@ Ajouts :
 - carte “Ouvert jusqu’à 19h” rendue cliquable ;
 - clic sur cette carte = ouverture d’une fenêtre avec toute la grille horaire ;
 - hover plus vivant : les cartes penchent légèrement dans des sens alternés.
+
+
+## V7 horaires
+
+- fenêtre des horaires réduite ;
+- bien centrée à l’écran ;
+- ne prend plus toute la page ;
+- ajout du logo de la librairie dans la fenêtre des horaires ;
+- mise en page plus propre et plus compacte.
+
+
+## V8 — conformité / RGPD / mentions légales
+
+Ajouts :
+- Mentions légales accessibles dans le footer.
+- Politique de confidentialité & RGPD.
+- Politique cookies.
+- Conditions d’utilisation du site.
+- Consentement explicite pour la newsletter.
+- Suppression des appels Google Fonts externes.
+- Mention de l’hébergeur Vercel.
+- Rappel des droits RGPD.
+- Gestion de la propriété intellectuelle.
+- Mention de la médiation de la consommation.
+- Rappel que des CGV seront nécessaires si la vente en ligne est activée.
+
+### Informations obligatoires encore à fournir par la librairie
+Avant de considérer le site juridiquement finalisé, remplacer les champs “À renseigner” par :
+- raison sociale / forme juridique ;
+- SIREN / SIRET ;
+- RCS / RNE ;
+- capital social si société ;
+- TVA intracommunautaire si applicable ;
+- téléphone professionnel ;
+- email professionnel ;
+- directeur/directrice de la publication ;
+- email ou contact pour l’exercice des droits RGPD ;
+- médiateur de la consommation compétent si vente à des consommateurs ;
+- horaires officiels ;
+- crédits / autorisations pour toutes les photos et couvertures utilisées.
+
+Le site actuel est un site vitrine. Si paiement, achat en ligne ou livraison sont ajoutés, rédiger et afficher des CGV adaptées avant lancement.

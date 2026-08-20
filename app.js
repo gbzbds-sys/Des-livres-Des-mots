@@ -193,13 +193,13 @@ $("#searchClose").addEventListener("click",closeSearch);
 $("#searchOverlay").addEventListener("click",e=>{ if(e.target===$("#searchOverlay")) closeSearch(); });
 $("#searchInput").addEventListener("input",e=>renderSearch(e.target.value));
 $$("[data-modal-close]").forEach(el=>el.addEventListener("click",closeBook));
-document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); closeHoursModal(); }});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); closeHoursModal(); closeLegalModal(); }});
 
 $("#menuBtn").addEventListener("click",()=>$("#mobileNav").classList.toggle("open"));
 $$(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>$("#mobileNav").classList.remove("open")));
 
 $("#newsletterForm").addEventListener("submit",e=>{
-  e.preventDefault(); e.target.reset(); toast("Merci ! Votre inscription a bien été prise en compte.");
+  e.preventDefault(); e.target.reset(); toast("Merci ! L’inscription est prête côté interface. Le service d’envoi doit encore être connecté.");
 });
 
 const observer = new IntersectionObserver(entries=>{
@@ -215,6 +215,55 @@ const hoursModal = $("#hoursModal");
 if (hoursModal) {
   hoursModal.addEventListener("click", e => {
     if (e.target === hoursModal) closeHoursModal();
+  });
+}
+
+
+
+function openLegalModal(tab = "mentions") {
+  const modal = $("#legalModal");
+  if (!modal) return;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+  setLegalTab(tab);
+}
+
+function closeLegalModal() {
+  const modal = $("#legalModal");
+  if (!modal) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+}
+
+function setLegalTab(tab) {
+  $$(".legal-tab").forEach(btn => {
+    btn.classList.toggle("is-active", btn.dataset.legalTab === tab);
+  });
+  $$(".legal-panel").forEach(panel => {
+    panel.classList.toggle("is-active", panel.dataset.legalPanel === tab);
+  });
+  const scroller = $(".legal-content");
+  if (scroller) scroller.scrollTop = 0;
+}
+
+$$("[data-legal-open]").forEach(el => {
+  el.addEventListener("click", () => openLegalModal(el.dataset.legalOpen || "mentions"));
+});
+
+$$("[data-legal-close]").forEach(el => {
+  el.addEventListener("click", closeLegalModal);
+});
+
+$$(".legal-tab").forEach(el => {
+  el.addEventListener("click", () => setLegalTab(el.dataset.legalTab));
+});
+
+const legalModal = $("#legalModal");
+if (legalModal) {
+  legalModal.addEventListener("click", e => {
+    if (e.target === legalModal) closeLegalModal();
   });
 }
 
