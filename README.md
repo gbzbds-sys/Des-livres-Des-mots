@@ -189,3 +189,18 @@ Améliorations visuelles majeures :
 - effets subtils de mouvement à la souris ;
 - finition plus haut de gamme sur header, contact, newsletter et footer ;
 - respect de `prefers-reduced-motion`.
+
+
+## V12 correctifs
+- correction du popover du bandeau du haut pour qu’il passe bien devant ;
+- les 3 cartes sous le hero sont maintenant interactives ;
+- elles sont devenues de vraies cartes premium arrondies ;
+- chaque carte permet d’aller directement vers la bonne section.
+
+
+## V13 — correctif hero
+- les trois livres du hero sont mieux espacés ;
+- suppression de la superposition trop forte ;
+- textes plus lisibles ;
+- hover plus propre : les livres s’écartent légèrement ;
+- la carte horaires reste au-dessus sans gêner la composition.

@@ -2705,3 +2705,331 @@ body::before{
     top:-24px;
   }
 }
+
+
+/* =========================================================
+   V12 — CORRECTIFS INTERACTIONS
+   ========================================================= */
+
+/* Le popover du bandeau doit passer devant le header et le hero */
+.site-header,
+.site-header .container,
+.announcement,
+.announcement__inner,
+.announcement-item {
+  overflow: visible !important;
+}
+.site-header {
+  z-index: 500;
+}
+.announcement {
+  position: relative;
+  z-index: 620;
+}
+.announcement-item {
+  position: relative;
+  z-index: 630;
+}
+.announcement-item.is-open,
+.announcement-item:hover,
+.announcement-item:focus-visible {
+  z-index: 640;
+}
+.announcement-item__popover {
+  z-index: 700 !important;
+  box-shadow:
+    0 28px 56px rgba(89, 72, 61, .18),
+    0 10px 24px rgba(89, 72, 61, .08);
+}
+
+/* Les cartes sous le hero deviennent vraiment interactives */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.hero-stat-card {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 118px;
+  padding: 18px 18px 16px;
+  text-decoration: none;
+  border-radius: 26px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(249,241,233,.94));
+  border: 1px solid rgba(220, 201, 187, .62);
+  box-shadow:
+    0 18px 40px rgba(114, 95, 80, .10),
+    inset 0 0 0 1px rgba(255,255,255,.34);
+  transition:
+    transform .35s cubic-bezier(.16,.84,.24,1),
+    box-shadow .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,.18), transparent 24%),
+    linear-gradient(130deg, rgba(205,139,114,.06), rgba(127,157,142,.04));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-stat-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 0 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(205,139,114,.78), rgba(127,157,142,.84));
+  transform: scaleX(.18);
+  transform-origin: left center;
+  opacity: .72;
+  transition: transform .35s ease, opacity .35s ease;
+}
+
+.hero-stat-card strong {
+  font-size: 26px;
+  line-height: 1;
+  margin: 0;
+}
+
+.hero-stat-card span {
+  margin: 0;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 11px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.hero-stat-card small {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.hero-stat-card:hover,
+.hero-stat-card:focus-visible {
+  transform: translateY(-8px) rotate(0.6deg);
+  box-shadow:
+    0 28px 60px rgba(114, 95, 80, .16),
+    0 10px 24px rgba(114, 95, 80, .08),
+    inset 0 0 0 1px rgba(255,255,255,.40);
+  border-color: rgba(205,139,114,.34);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(249,241,233,.98));
+}
+
+.hero-stat-card:nth-child(even):hover,
+.hero-stat-card:nth-child(even):focus-visible {
+  transform: translateY(-8px) rotate(-0.6deg);
+}
+
+.hero-stat-card:hover::after,
+.hero-stat-card:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.hero-stat-card:hover small,
+.hero-stat-card:focus-visible small {
+  color: var(--lux-sage-deep, #4e6e5f);
+}
+
+@media (max-width: 900px) {
+  .hero__stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .hero-stat-card {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================================
+   V13 — CORRECTIF SUPERPOSITION DES LIVRES DU HERO
+   ========================================================= */
+
+/* On redonne une composition plus propre aux 3 livres */
+.hero__visual {
+  overflow: visible;
+}
+
+.book-stage {
+  width: 520px;
+  height: 500px;
+  position: relative;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+/* Base commune */
+.book {
+  position: absolute;
+  width: 220px;
+  height: 330px;
+  transform-style: preserve-3d;
+  transition:
+    transform .48s cubic-bezier(.16,.84,.24,1),
+    filter .35s ease;
+}
+
+/* Livre gauche */
+.book--back {
+  left: 18px;
+  top: 120px;
+  z-index: 1;
+  transform: rotate(-9deg) translateZ(0);
+}
+
+/* Livre droit / arrière */
+.book--middle {
+  right: 20px;
+  top: 52px;
+  z-index: 2;
+  transform: rotate(7deg) translateZ(10px);
+}
+
+/* Livre central / premier plan */
+.book--front {
+  left: 50%;
+  top: 150px;
+  z-index: 4;
+  transform: translateX(-50%) rotate(-1deg) translateZ(34px);
+}
+
+/* Limite l'empiètement visuel du texte */
+.book__cover {
+  padding: 30px 26px 28px;
+}
+.book__cover h3 {
+  font-size: 27px;
+  line-height: 1.02;
+  max-width: 160px;
+  text-wrap: balance;
+}
+.book__cover small {
+  font-size: 9px;
+}
+
+/* Hover individuel : on sépare encore davantage */
+.hero__visual:hover .book--back {
+  transform: translate3d(-14px,-8px,10px) rotate(-11deg);
+}
+.hero__visual:hover .book--middle {
+  transform: translate3d(14px,-8px,18px) rotate(9deg);
+}
+.hero__visual:hover .book--front {
+  transform: translate3d(-50%,-14px,46px) rotate(-1deg);
+}
+
+/* On neutralise les anciennes règles V10/V11 qui rapprochaient trop les livres */
+.hero__visual:hover .book-stage {
+  transform: none !important;
+}
+
+/* La carte horaires garde de l'espace au-dessus */
+.floating-card--top {
+  top: 24px;
+  right: 4px;
+  z-index: 10;
+}
+
+/* Petit équilibre visuel avec la carte basse */
+.floating-card--bottom {
+  left: auto;
+  right: 12px;
+  bottom: 18px;
+  z-index: 10;
+}
+
+/* Desktop moyen */
+@media (max-width: 1180px) {
+  .book-stage {
+    width: 470px;
+    transform: scale(.94);
+    transform-origin: center center;
+  }
+  .book--back { left: 12px; }
+  .book--middle { right: 12px; }
+}
+
+/* Tablette */
+@media (max-width: 980px) {
+  .book-stage {
+    width: 440px;
+    height: 470px;
+    transform: scale(.90);
+  }
+  .book {
+    width: 205px;
+    height: 310px;
+  }
+  .book--back {
+    left: 5px;
+    top: 118px;
+  }
+  .book--middle {
+    right: 5px;
+    top: 58px;
+  }
+  .book--front {
+    top: 150px;
+  }
+}
+
+/* Mobile : composition beaucoup plus lisible */
+@media (max-width: 680px) {
+  .hero__visual {
+    min-height: 430px;
+  }
+  .book-stage {
+    width: 350px;
+    height: 400px;
+    transform: scale(.82);
+  }
+  .book {
+    width: 185px;
+    height: 285px;
+  }
+  .book--back {
+    left: -4px;
+    top: 104px;
+    transform: rotate(-8deg);
+  }
+  .book--middle {
+    right: -4px;
+    top: 54px;
+    transform: rotate(7deg);
+  }
+  .book--front {
+    top: 132px;
+  }
+  .book__cover h3 {
+    font-size: 23px;
+    max-width: 140px;
+  }
+  .floating-card--top {
+    top: 2px;
+    right: 0;
+  }
+  .floating-card--bottom {
+    right: 0;
+    bottom: 8px;
+  }
+}
