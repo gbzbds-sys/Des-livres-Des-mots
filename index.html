@@ -61,6 +61,8 @@
         <a href="#selection">Nos sélections</a>
         <a href="#librairie">La librairie</a>
         <a href="#espaces">Les espaces</a>
+        <a href="#clickcollect">Click & Collect</a>
+        <a href="#club">Club</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -247,6 +249,30 @@
     </section>
 
 
+
+    <section class="section clickcollect-section" id="clickcollect">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow"><span></span> Commander simplement</div><h2>Click & Collect <em>à la librairie</em></h2></div>
+          <div class="section-head__right"><p>Choisissez vos livres, préparez votre commande en ligne et récupérez-la directement en boutique à Toufflers.</p></div>
+        </div>
+        <div class="collect-layout reveal">
+          <div class="collect-products">
+            <div class="collect-products__head"><div><small>SÉLECTION DISPONIBLE</small><h3>Préparer mon panier</h3></div><span class="collect-count" id="collectCount">0 livre</span></div>
+            <div class="collect-grid" id="collectGrid"></div>
+          </div>
+          <aside class="collect-cart">
+            <div class="collect-cart__head"><div><small>MON PANIER</small><h3>Retrait en boutique</h3></div><span class="collect-cart__icon">🛍️</span></div>
+            <div class="collect-cart__empty" id="collectEmpty"><strong>Votre panier est vide</strong><span>Ajoutez un livre pour commencer votre commande.</span></div>
+            <div class="collect-cart__items" id="collectCartItems"></div>
+            <div class="collect-cart__total"><span>Total estimé</span><strong id="collectTotal">0,00 €</strong></div>
+            <button class="btn btn--primary collect-checkout-btn" id="collectCheckoutBtn" type="button" disabled>Continuer vers le retrait <span>→</span></button>
+            <p class="collect-note">Le paiement sécurisé sera activé dès que le prestataire de paiement sera relié.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--spaces" id="espaces">
       <div class="container">
         <div class="section-head reveal">
@@ -260,6 +286,28 @@
         </div>
 
         <div class="spaces-grid reveal" id="spacesGrid"></div>
+      </div>
+    </section>
+
+
+    <section class="section club-section" id="club">
+      <div class="container club-grid">
+        <div class="club-copy reveal">
+          <div class="eyebrow"><span></span> Lire ensemble</div>
+          <h2>Le Club <em>Des livres, Des mots</em></h2>
+          <p>Un livre est choisi pour être lu ensemble. Les membres peuvent échanger leurs impressions, partager leurs passages préférés et participer aux rendez-vous organisés par la librairie.</p>
+          <div class="club-points">
+            <div><span>01</span><strong>Un livre choisi</strong><small>Une lecture commune proposée par la librairie.</small></div>
+            <div><span>02</span><strong>Un espace d’échange</strong><small>Discussions, avis et recommandations entre membres.</small></div>
+            <div><span>03</span><strong>Des rendez-vous</strong><small>Rencontres en librairie autour du livre du moment.</small></div>
+          </div>
+          <button class="btn btn--primary" id="joinClubBtn" type="button">Rejoindre le club <span>→</span></button>
+        </div>
+        <div class="club-feature reveal reveal--delay">
+          <span class="club-feature__badge">LECTURE DU MOMENT</span>
+          <div class="club-book"><div class="club-book__cover"><small>CLUB DE LECTURE</small><strong>Le prochain livre sera annoncé ici</strong><span>Des livres, Des mots</span></div></div>
+          <div class="club-feature__info"><div><span>Prochaine rencontre</span><strong>À annoncer</strong></div><div><span>Lieu</span><strong>À la librairie</strong></div></div>
+        </div>
       </div>
     </section>
 
@@ -280,6 +328,12 @@
           <h2>Votre prochaine lecture est peut-être <em>déjà ici.</em></h2>
           <p>Besoin d'un titre précis, d'un conseil ou simplement envie de découvrir le lieu ? Retrouvez la librairie au 4-6 rue de l’Église à Toufflers.</p>
 
+
+          <div class="contact-portal">
+            <button class="contact-type-card" type="button" data-contact-type="information"><span>💬</span><div><strong>Information / anomalie</strong><small>Question, problème sur le site, disponibilité d’un livre…</small></div><b>→</b></button>
+            <button class="contact-type-card" type="button" data-contact-type="partenariat"><span>🤝</span><div><strong>Partenariat</strong><small>Auteur, association, entreprise, école ou projet local.</small></div><b>→</b></button>
+            <button class="contact-type-card" type="button" data-contact-type="commande"><span>📦</span><div><strong>Commande / retrait</strong><small>Question concernant une commande Click & Collect.</small></div><b>→</b></button>
+          </div>
           <div class="contact-actions">
             <a class="btn btn--primary" id="directionsBtn" target="_blank" rel="noreferrer">Voir l’itinéraire <span>↗</span></a>
             <a class="btn btn--ghost" href="#espaces">Découvrir les espaces</a>
@@ -584,7 +638,45 @@
   </div>
 
 
-  <div class="toast" id="toast"></div>
+  
+  <div class="modal collect-modal" id="collectModal" aria-hidden="true">
+    <div class="modal__backdrop" data-collect-close></div><div class="modal__card collect-modal__card">
+      <button class="round-btn modal__close" data-collect-close aria-label="Fermer">×</button>
+      <div class="collect-modal__head"><img src="logo-angelique-a.png" alt="Logo"><div><small>CLICK & COLLECT</small><h3>Finaliser le retrait</h3></div></div>
+      <div class="collect-summary" id="collectSummary"></div>
+      <div class="collect-form">
+        <label>Nom et prénom<input id="collectName" type="text" placeholder="Votre nom"></label>
+        <label>Email<input id="collectEmail" type="email" placeholder="vous@exemple.fr"></label>
+        <label>Téléphone<input id="collectPhone" type="tel" placeholder="06 00 00 00 00"></label>
+        <label>Jour de retrait<select id="collectPickupDay"><option value="">Choisir un jour</option><option>Lundi</option><option>Mardi</option><option>Mercredi</option><option>Jeudi</option><option>Vendredi</option><option>Samedi</option></select></label>
+        <label>Message<textarea id="collectMessage" rows="3" placeholder="Précision éventuelle"></textarea></label>
+        <label class="collect-consent"><input id="collectConsent" type="checkbox"> <span>J’accepte que mes informations soient utilisées pour préparer et gérer ma commande.</span></label>
+      </div>
+      <div class="collect-modal__actions"><button class="btn btn--ghost" type="button" id="collectEmailOrderBtn">Envoyer la demande</button><button class="btn btn--primary" type="button" id="collectPayBtn">Payer en ligne <span>→</span></button></div>
+      <p class="collect-note">Le paiement réel nécessite un lien de paiement sécurisé configuré.</p>
+    </div>
+  </div>
+
+  <div class="modal contact-modal" id="contactModal" aria-hidden="true">
+    <div class="modal__backdrop" data-contact-close></div><div class="modal__card contact-modal__card">
+      <button class="round-btn modal__close" data-contact-close aria-label="Fermer">×</button>
+      <div class="contact-modal__head"><img src="logo-angelique-a.png" alt="Logo"><div><small id="contactFormKicker">CONTACT</small><h3 id="contactFormTitle">Nous écrire</h3></div></div>
+      <div class="contact-form"><label>Nom et prénom<input id="contactName" type="text"></label><label>Email<input id="contactEmail" type="email"></label><label>Sujet<input id="contactSubject" type="text"></label><label>Votre message<textarea id="contactMessage" rows="7"></textarea></label></div>
+      <button class="btn btn--primary contact-send-btn" id="contactSendBtn" type="button">Préparer l’email <span>→</span></button>
+      <p class="contact-form__note">Le bouton ouvre votre application mail avec le destinataire, le sujet et le message déjà remplis.</p>
+    </div>
+  </div>
+
+  <div class="modal club-modal" id="clubModal" aria-hidden="true">
+    <div class="modal__backdrop" data-club-close></div><div class="modal__card club-modal__card">
+      <button class="round-btn modal__close" data-club-close aria-label="Fermer">×</button>
+      <div class="contact-modal__head"><img src="logo-angelique-a.png" alt="Logo"><div><small>CLUB DE LECTURE</small><h3>Rejoindre le club</h3></div></div>
+      <div class="contact-form"><label>Nom et prénom<input id="clubName" type="text"></label><label>Email<input id="clubEmail" type="email"></label><label>Style préféré<select id="clubGenre"><option>Romans</option><option>Polars</option><option>Romance</option><option>BD & Manga</option><option>Jeunesse</option><option>Essais</option></select></label><label>Un petit mot<textarea id="clubMessage" rows="4"></textarea></label></div>
+      <button class="btn btn--primary" id="clubSendBtn" type="button">Envoyer ma demande <span>→</span></button>
+    </div>
+  </div>
+
+<div class="toast" id="toast"></div>
 
   <script src="content.js"></script>
   <script src="app.js"></script>

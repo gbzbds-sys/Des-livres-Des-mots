@@ -252,8 +252,10 @@ Dernière passe de finition :
 - reflet plus visible au survol.
 
 
-## V19 — livres en mouvement
-- mouvement plus visible ;
-- superposition propre ;
-- rotations différenciées ;
-- les autres livres reculent au survol.
+## V20 — Click & Collect / Contact / Club
+- Click & Collect avec panier et retrait boutique.
+- Paiement prêt à être relié à un lien sécurisé.
+- Contact Information/anomalie, Partenariat, Commande/retrait.
+- Formulaires qui préparent un email.
+- Club de lecture avec inscription.
+- À renseigner dans content.js : contactEmail, partnershipEmail, orderEmail, clubEmail, paymentUrl.

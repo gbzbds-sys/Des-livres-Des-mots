@@ -20,6 +20,11 @@ window.LIBRARY_CONTENT = {
     phoneLink: "",
     email: "",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=4-6+rue+de+l%27Eglise+59390+Toufflers",
+    contactEmail: "",
+    partnershipEmail: "",
+    orderEmail: "",
+    clubEmail: "",
+    paymentUrl: "",
     instagram: "#",
     facebook: "#"
   },
@@ -40,6 +45,13 @@ window.LIBRARY_CONTENT = {
     { name: "Des livres, Des mots", icon: "◫", desc: "Bulles, séries & découvertes", color: "linear-gradient(145deg,#64788c,#3e5062)" },
     { name: "Des livres, Des mots", icon: "◌", desc: "Comprendre le monde autrement", color: "linear-gradient(145deg,#8a6d63,#654a44)" },
     { name: "Des livres, Des mots", icon: "◇", desc: "Arts, voyage & grands formats", color: "linear-gradient(145deg,#7a6d8a,#544961)" }
+  ],
+
+  clickCollect: [
+    { id: "nouveaute", title: "Vos nouveautés", category: "Nouveautés", price: 19.90, color: "linear-gradient(145deg,#c47e5d,#86503f)" },
+    { id: "coup-coeur", title: "Le coup de cœur", category: "Sélection", price: 21.90, color: "linear-gradient(145deg,#55705f,#314b3d)" },
+    { id: "jeunesse", title: "Jeunesse", category: "Jeunesse", price: 14.90, color: "linear-gradient(145deg,#d0a054,#9e713a)" },
+    { id: "bd-manga", title: "BD & Manga", category: "BD & Manga", price: 12.90, color: "linear-gradient(145deg,#59616f,#343c49)" }
   ],
 
   spaces: [
