@@ -375,8 +375,8 @@ partenariat:{
 title:'Proposer un partenariat',
 email:'partnershipEmail',
 subject:'Proposition de partenariat',
-kicker:'COLLABORATION PREMIUM',
-intro:'Auteur, association, école, entreprise ou projet local : présentez votre proposition dans un espace plus premium et professionnel.',
+kicker:'PARTENARIAT',
+intro:'Auteur, association, école, entreprise ou projet local : présentez votre proposition dans un espace clair, soigné et professionnel.',
 icon:'🤝',
 theme:'contact-modal--premium',
 button:'Préparer la proposition'
@@ -416,3 +416,46 @@ $("#contactSendBtn")?.addEventListener('click',()=>{const m=modes[activeMode],r=
 $("#joinClubBtn")?.addEventListener('click',()=>{$("#clubModal").classList.add('open');document.body.classList.add('no-scroll')});$$('[data-club-close]').forEach(x=>x.addEventListener('click',()=>{$("#clubModal").classList.remove('open');document.body.classList.remove('no-scroll')}));
 $("#clubSendBtn")?.addEventListener('click',()=>{const r=C.shop.clubEmail||C.shop.contactEmail,n=$("#clubName").value.trim(),e=$("#clubEmail").value.trim();if(!r){toast('Renseigne clubEmail dans content.js.');return}if(!n||!e){toast('Merci de renseigner nom et email.');return}location.href=`mailto:${r}?subject=${encodeURIComponent('Demande d’inscription — Club de lecture')}&body=${encodeURIComponent(`Bonjour,\n\nJe souhaite rejoindre le club de lecture.\n\nNom : ${n}\nEmail : ${e}\nStyle préféré : ${$("#clubGenre").value}\nMessage : ${$("#clubMessage").value}`)}`});
 renderCollectProducts();renderCollectCart();
+
+
+/* =========================================================
+   V24 — livres hero interactifs
+   ========================================================= */
+(function initHeroBooksInteractive(){
+  const finePointer = window.matchMedia("(pointer:fine)").matches;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!finePointer || reduced) return;
+
+  const books = $$(".book-stage .book");
+  books.forEach((book, index) => {
+    const cover = book.querySelector(".book__cover");
+    if (!cover) return;
+
+    const direction = index % 2 === 0 ? 1 : -1;
+    const lift = index === 2 ? 1.08 : 1.04;
+
+    book.addEventListener("mousemove", (e) => {
+      const r = book.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+
+      cover.style.transform = `translate3d(${px * 12 * direction}px, ${py * 10}px, 0) rotateX(${py * -8}deg) rotateY(${px * 10 * direction}deg) scale(${lift})`;
+    });
+
+    book.addEventListener("mouseleave", () => {
+      cover.style.transform = "";
+    });
+  });
+})();
+
+
+/* V25 — petit polish UX formulaires */
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  const modal = $("#contactModal");
+  if (modal && modal.classList.contains("open")) {
+    modal.classList.remove("open","contact-modal--help","contact-modal--premium","contact-modal--order");
+    modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("no-scroll");
+  }
+});

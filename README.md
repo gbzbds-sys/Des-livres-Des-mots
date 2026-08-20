@@ -278,3 +278,31 @@ Ajouts :
 - **Partenariat** : doré / crème / premium ;
 - **Commande / retrait** : vert / logistique ;
 - kicker, intro, icône et texte du bouton changent également selon le formulaire.
+
+
+## V23 — ajustements modales contact
+- suppression du mot **premium** dans le rendu visible du formulaire partenariat ;
+- **kicker** partenariat changé en **PARTENARIAT** ;
+- texte d’introduction partenariat plus neutre et professionnel ;
+- modales de contact légèrement plus compactes ;
+- meilleure gestion de la hauteur, du scroll et de la visibilité du bouton ;
+- textarea un peu moins haute pour éviter de couper le bas sur certains écrans.
+
+
+## V24 — retour de l'interactivité des livres du hero
+- remise en place d’un effet visuel clair au survol des 3 livres du hero ;
+- chaque livre bouge différemment pour donner un rendu plus vivant ;
+- léger mouvement interne du visuel de couverture ;
+- superposition conservée proprement avec z-index renforcé au survol.
+
+
+## V25 — Client final
+- harmonisation parfaite des trois formulaires ;
+- même structure, mêmes espacements, mêmes tailles et mêmes comportements ;
+- thèmes couleur distincts mais cohérents ;
+- micro-animations d’ouverture, d’icône, de champs et de bouton ;
+- transitions plus fluides ;
+- scroll et responsive finalisés ;
+- respect de `prefers-reduced-motion` ;
+- fermeture du formulaire avec la touche Échap ;
+- version pensée pour une livraison client.
