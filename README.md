@@ -250,3 +250,10 @@ Dernière passe de finition :
 - gauche et droite partent dans des sens différents ;
 - livre du milieu remonte et passe bien au premier plan ;
 - reflet plus visible au survol.
+
+
+## V19 — livres en mouvement
+- mouvement plus visible ;
+- superposition propre ;
+- rotations différenciées ;
+- les autres livres reculent au survol.

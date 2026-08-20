@@ -3861,3 +3861,25 @@ body {
     transform: translate3d(-50%,-10px,22px) rotate(-1.8deg) scale(1.022) !important;
   }
 }
+
+/* V19 — LIVRES : MOUVEMENT + SUPERPOSITION + ROTATION PROPRE */
+.book-stage{position:relative;transform-style:preserve-3d;isolation:isolate;}
+.book{position:absolute;transform-style:preserve-3d;transform-origin:50% 70%;transition:transform .38s cubic-bezier(.16,.84,.24,1),filter .34s ease,opacity .34s ease;}
+.book--back{z-index:2;transform:rotate(-8deg) translateZ(0);}
+.book--middle{z-index:1;transform:rotate(7deg) translateZ(0);}
+.book--front{z-index:4;transform:translateX(-50%) rotate(-1deg) translateZ(24px);}
+.hero__visual:hover .book--back{transform:translate3d(-12px,-8px,10px) rotate(-10deg)!important;}
+.hero__visual:hover .book--middle{transform:translate3d(12px,-8px,12px) rotate(9deg)!important;}
+.hero__visual:hover .book--front{transform:translate3d(-50%,-10px,34px) rotate(-1.5deg)!important;}
+.book--back:hover{z-index:10!important;transform:translate3d(-26px,-18px,38px) rotate(-15deg) scale(1.045)!important;filter:drop-shadow(0 32px 58px rgba(46,39,31,.22));}
+.book--middle:hover{z-index:10!important;transform:translate3d(26px,-18px,38px) rotate(14deg) scale(1.045)!important;filter:drop-shadow(0 32px 58px rgba(46,39,31,.22));}
+.book--front:hover{z-index:12!important;transform:translate3d(-50%,-20px,52px) rotate(-3deg) scale(1.05)!important;filter:drop-shadow(0 36px 64px rgba(46,39,31,.24));}
+.book-stage:has(.book--back:hover) .book--middle{transform:translate3d(12px,4px,-8px) rotate(8deg) scale(.985)!important;opacity:.94;}
+.book-stage:has(.book--back:hover) .book--front{transform:translate3d(-50%,4px,10px) rotate(-1deg) scale(.99)!important;opacity:.96;}
+.book-stage:has(.book--middle:hover) .book--back{transform:translate3d(-12px,4px,-8px) rotate(-9deg) scale(.985)!important;opacity:.94;}
+.book-stage:has(.book--middle:hover) .book--front{transform:translate3d(-50%,4px,10px) rotate(-1deg) scale(.99)!important;opacity:.96;}
+.book-stage:has(.book--front:hover) .book--back{transform:translate3d(-14px,6px,-12px) rotate(-9deg) scale(.98)!important;opacity:.92;}
+.book-stage:has(.book--front:hover) .book--middle{transform:translate3d(14px,6px,-12px) rotate(8deg) scale(.98)!important;opacity:.92;}
+.book__cover::after{background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.15) 48%,transparent 76%)!important;transition:transform .72s ease!important;}
+@media(max-width:980px){.book--back:hover{transform:translate3d(-16px,-12px,22px) rotate(-13deg) scale(1.03)!important}.book--middle:hover{transform:translate3d(16px,-12px,22px) rotate(12deg) scale(1.03)!important}.book--front:hover{transform:translate3d(-50%,-14px,30px) rotate(-2deg) scale(1.032)!important}}
+@media(max-width:680px){.hero__visual:hover .book--back{transform:translate3d(-6px,-4px,6px) rotate(-9deg)!important}.hero__visual:hover .book--middle{transform:translate3d(6px,-4px,6px) rotate(8deg)!important}.hero__visual:hover .book--front{transform:translate3d(-50%,-6px,18px) rotate(-1deg)!important}}
