@@ -155,3 +155,7 @@ Avant de considérer le site juridiquement finalisé, remplacer les champs “À
 - crédits / autorisations pour toutes les photos et couvertures utilisées.
 
 Le site actuel est un site vitrine. Si paiement, achat en ligne ou livraison sont ajoutés, rédiger et afficher des CGV adaptées avant lancement.
+
+
+## Correctif logo bloc librairie
+- Remplacement de l’icône maison par le vrai logo officiel dans le bloc de contact / adresse.
