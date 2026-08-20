@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f4eee4" />
+  <meta name="description" content="Librairie créative — nouveautés, coups de cœur, conseils et commandes." />
+  <title>Des livres, Des mots — Librairie créative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="announcement">
+    <div class="container announcement__inner">
+      <span>📚 Nouvelle librairie indépendante</span>
+      <span class="announcement__sep">•</span>
+      <span>Commande & retrait en boutique</span>
+      <span class="announcement__sep">•</span>
+      <span>Conseils personnalisés</span>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Accueil">
+        <span class="brand__mark brand__mark--image"><img src="logo-angelique-a.png" alt="Logo de la librairie" /></span>
+        <span class="brand__text">
+          <strong data-shop-name>Des livres, Des mots</strong>
+          <small>Librairie créative</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#nouveautes">Nouveautés</a>
+        <a href="#selection">Nos sélections</a>
+        <a href="#librairie">La librairie</a>
+        <a href="#espaces">Les espaces</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="searchOpen" aria-label="Rechercher">⌕</button>
+        <a class="btn btn--primary btn--small" href="#contact">Nous trouver <span>↗</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#selection">Nos sélections</a>
+      <a href="#librairie">La librairie</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <div class="eyebrow"><span></span> Une librairie pensée pour prendre le temps</div>
+          <h1>Un lieu pour <em>lire</em>,<br>respirer et partager.</h1>
+          <p class="hero__lead">
+            Bienvenue chez <strong>Des livres, Des mots</strong>, une librairie créative à Toufflers pensée comme un vrai lieu de vie : livres, lecture, détente, thé, café et moments en famille.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#nouveautes">Découvrir les livres <span>→</span></a>
+            <a class="btn btn--ghost" href="#librairie">Visiter la librairie</a>
+          </div>
+
+          <div class="hero__stats">
+            <div><strong>📚</strong><span>sélections pour tous les lecteurs</span></div>
+            <div><strong>☕</strong><span>thé & café sur place</span></div>
+            <div><strong>🧸</strong><span>espace dédié aux enfants</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal--delay">
+          <div class="ambient ambient--one"></div>
+          <div class="ambient ambient--two"></div>
+          <div class="book-stage">
+            <div class="book book--back">
+              <div class="book__spine"></div>
+              <div class="book__cover cover--sage">
+                <span class="cover__kicker">Roman</span>
+                <h3>Le silence<br>des jardins</h3>
+                <small>Élise Moreau</small>
+              </div>
+            </div>
+            <div class="book book--middle">
+              <div class="book__spine"></div>
+              <div class="book__cover cover--blue">
+                <span class="cover__kicker">Sélection</span>
+                <h3>Là où<br>commence l'aube</h3>
+                <small>Martin Léon</small>
+              </div>
+            </div>
+            <div class="book book--front">
+              <div class="book__spine"></div>
+              <div class="book__cover cover--clay">
+                <span class="cover__kicker">Coup de cœur</span>
+                <h3>Nos jours<br>minuscules</h3>
+                <small>Clara Dumas</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card--top">
+            <span class="pulse-dot"></span>
+            <div><small>Aujourd'hui</small><strong>Ouvert jusqu'à 19h</strong></div>
+          </div>
+          <div class="floating-card floating-card--bottom">
+            <span class="float-icon">✦</span>
+            <div><small>Le conseil du libraire</small><strong>Une sélection chaque semaine</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-strip__grid">
+        <div><span>01</span><strong>Conseil personnalisé</strong><small>On vous aide à trouver le bon livre.</small></div>
+        <div><span>02</span><strong>Commande rapide</strong><small>Un titre absent ? On le commande.</small></div>
+        <div><span>03</span><strong>Retrait en boutique</strong><small>Simple, local et sans attente inutile.</small></div>
+        <div><span>04</span><strong>Événements</strong><small>Rencontres, dédicaces et lectures.</small></div>
+      </div>
+    </section>
+
+    <section class="section" id="nouveautes">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> À découvrir maintenant</div>
+            <h2>Nouveautés & <em>coups de cœur</em></h2>
+          </div>
+          <div class="section-head__right">
+            <p>Découvrez les nouveautés, recommandations et coups de cœur de la librairie.</p>
+            <div class="slider-controls">
+              <button class="round-btn" id="booksPrev" aria-label="Précédent">←</button>
+              <button class="round-btn" id="booksNext" aria-label="Suivant">→</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="books-row" id="booksRow"></div>
+      </div>
+    </section>
+
+    <section class="section section--tinted" id="selection">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> Trouvez votre prochaine lecture</div>
+            <h2>Explorer par <em>univers</em></h2>
+          </div>
+        </div>
+
+        <div class="categories reveal" id="categories"></div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="librairie">
+      <div class="container story-grid">
+        <div class="story-visual reveal">
+          <div class="story-frame">
+            <div class="shelf shelf--1"></div>
+            <div class="shelf shelf--2"></div>
+            <div class="shelf shelf--3"></div>
+            <div class="shelf-light"></div>
+            <div class="story-badge"><span>Depuis</span><strong>2026</strong><small>avec passion</small></div>
+          </div>
+        </div>
+
+        <div class="story-copy reveal reveal--delay">
+          <div class="eyebrow"><span></span> Notre histoire commence ici</div>
+          <h2>Une librairie de proximité, <em>sans compromis sur l'expérience.</em></h2>
+          <p>
+            <span data-shop-name>Des livres, Des mots</span> est née avec une idée simple : créer un endroit où
+            l'on vient autant pour un livre que pour un conseil, une découverte ou une conversation.
+          </p>
+          <p>
+            Le lieu réunit une librairie, un espace lecture intérieur, une terrasse détente avec thé et café, ainsi qu'un espace spécialement pensé pour les enfants.
+          </p>
+
+          <div class="story-points">
+            <div><span>✓</span><p><strong>Indépendante & locale</strong><small>Une sélection construite sur place.</small></p></div>
+            <div><span>✓</span><p><strong>Pour tous les lecteurs</strong><small>Adultes, ados, enfants et curieux.</small></p></div>
+            <div><span>✓</span><p><strong>Des rendez-vous réguliers</strong><small>Animations et rencontres en librairie.</small></p></div>
+          </div>
+          <a class="text-link" href="#contact">Venir nous rencontrer <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section--spaces" id="espaces">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow"><span></span> Un lieu pensé pour rester</div>
+            <h2>Des espaces pour <em>lire, se détendre et partager</em></h2>
+          </div>
+          <div class="section-head__right">
+            <p>La librairie propose aussi un véritable espace de vie avec une terrasse, un coin lecture intérieur et un univers dédié aux enfants.</p>
+          </div>
+        </div>
+
+        <div class="spaces-grid reveal" id="spacesGrid"></div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container">
+        <div class="quote-card reveal">
+          <span class="quote-mark">“</span>
+          <blockquote>Un bon libraire ne vend pas seulement des livres. Il crée des rencontres entre un texte et son lecteur.</blockquote>
+          <div class="quote-signature"><span></span><p><strong>L'équipe de la librairie</strong><small data-shop-name>Des livres, Des mots</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <div class="eyebrow"><span></span> Passez nous voir</div>
+          <h2>Votre prochaine lecture est peut-être <em>déjà ici.</em></h2>
+          <p>Besoin d'un titre précis, d'un conseil ou simplement envie de découvrir le lieu ? Retrouvez la librairie au 4-6 rue de l’Église à Toufflers.</p>
+
+          <div class="contact-actions">
+            <a class="btn btn--primary" id="directionsBtn" target="_blank" rel="noreferrer">Voir l’itinéraire <span>↗</span></a>
+            <a class="btn btn--ghost" href="#espaces">Découvrir les espaces</a>
+          </div>
+        </div>
+
+        <div class="info-card reveal reveal--delay">
+          <div class="info-card__top">
+            <span class="info-icon">⌂</span>
+            <div>
+              <small>La librairie</small>
+              <strong data-shop-name>Des livres, Des mots</strong>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div><span>Adresse</span><strong data-address>4-6 rue de l’Église, 59390 Toufflers</strong></div>
+            <div><span>Contact</span><strong>Coordonnées à venir</strong></div>
+            <div><span>Réseaux</span><strong>À venir</strong></div>
+          </div>
+
+          <div class="hours">
+            <div class="hours__title"><strong>Horaires</strong><span class="open-pill open-pill--neutral">Horaires à venir</span></div>
+            <div id="hoursList"></div>
+          </div>
+
+          <a class="map-placeholder" id="mapLink" target="_blank" rel="noreferrer">
+            <div class="map-lines"></div>
+            <span class="map-pin">●</span>
+            <div><strong>Itinéraire</strong><small>Ouvrir dans Google Maps ↗</small></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter__inner reveal">
+        <div>
+          <span class="newsletter__icon">✉</span>
+          <div><strong>Les nouvelles de la librairie</strong><small>Actualités, événements, ateliers et nouveautés de la librairie.</small></div>
+        </div>
+        <form id="newsletterForm" class="newsletter-form">
+          <input type="email" placeholder="Votre adresse email" required />
+          <button class="btn btn--dark" type="submit">S'inscrire <span>→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="brand brand--footer" href="#top">
+          <span class="brand__mark brand__mark--image"><img src="logo-angelique-a.png" alt="Logo de la librairie" /></span>
+          <span class="brand__text"><strong data-shop-name>Des livres, Des mots</strong><small>Librairie créative</small></span>
+        </a>
+        <p>Librairie créative à Toufflers.<br>Lire, se détendre, partager.</p>
+      </div>
+      <div><strong>Explorer</strong><a href="#nouveautes">Nouveautés</a><a href="#selection">Sélections</a><a href="#librairie">La librairie</a><a href="#espaces">Les espaces</a></div>
+      <div><strong>Pratique</strong><a href="#contact">Horaires</a><a href="#contact">Contact</a><a href="#contact">Commander un livre</a></div>
+      <div><strong>Suivre</strong><a href="#" data-instagram>Instagram</a><a href="#" data-facebook>Facebook</a></div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> <span data-shop-name>Des livres, Des mots</span>. Tous droits réservés.</span>
+      <span>Site vitrine • Librairie créative</span>
+    </div>
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-panel">
+      <div class="search-panel__head">
+        <div><small>RECHERCHE</small><h3>Trouver un livre</h3></div>
+        <button class="round-btn" id="searchClose" aria-label="Fermer">×</button>
+      </div>
+      <div class="search-input-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Titre, auteur, catégorie..." autocomplete="off" />
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="bookModal" aria-hidden="true">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__card">
+      <button class="round-btn modal__close" data-modal-close>×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
