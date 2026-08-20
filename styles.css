@@ -829,3 +829,159 @@ body {
     border-left-width: 56px;
   }
 }
+
+
+/* =========================
+   V6 FIXES / HORAIRES / HOVERS
+   ========================= */
+
+/* Carte horaire cliquable */
+.floating-card--hours {
+  border: 1px solid rgba(255,255,255,.62);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+.floating-card--hours:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 22px 44px rgba(125, 102, 88, .16), inset 0 0 0 1px rgba(255,255,255,.55);
+}
+.floating-card--hours:focus-visible {
+  outline: 2px solid rgba(95,133,115,.45);
+  outline-offset: 3px;
+}
+
+/* Modal horaires */
+.hours-modal__card {
+  width: min(560px, calc(100% - 30px));
+}
+.hours-modal__head small {
+  font-size: 9px;
+  letter-spacing: .14em;
+  color: var(--muted);
+}
+.hours-modal__head h3 {
+  font-family: var(--font-display);
+  font-size: 34px;
+  margin: 10px 0 10px;
+}
+.hours-modal__head p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.hours-modal__grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.hours-modal__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.68);
+  border: 1px solid rgba(216,197,183,.48);
+  box-shadow: 0 10px 24px rgba(124, 102, 87, .07);
+}
+.hours-modal__row strong {
+  font-size: 13px;
+}
+.hours-modal__row span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.hours-modal__row.is-today {
+  background: linear-gradient(135deg, rgba(128,167,147,.18) 0%, rgba(255,255,255,.9) 100%);
+  border-color: rgba(95,133,115,.22);
+  box-shadow: 0 12px 28px rgba(95, 133, 115, .10);
+}
+
+/* Effet coin de page : plus discret, uniquement sur cartes plus adaptées */
+.book-card__visual::after,
+.category::after,
+.quote-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid rgba(255,255,255,.96);
+  border-left: 0 solid transparent;
+  filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+  transition:
+    border-top-width .28s cubic-bezier(.2,.8,.2,1),
+    border-left-width .28s cubic-bezier(.2,.8,.2,1),
+    filter .28s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+.book-card:hover .book-card__visual::after,
+.category:hover::after,
+.quote-card:hover::after {
+  border-top-width: 42px;
+  border-left-width: 42px;
+  filter: drop-shadow(-4px 6px 9px rgba(0,0,0,.10));
+}
+
+/* On enlève ce coin de page des grosses cartes où il gênait visuellement */
+.space-card::after,
+.info-card::after,
+.story-frame::after {
+  display: none !important;
+}
+
+/* Hover plus vivant : chaque carte penche dans un sens différent */
+.book-card,
+.category,
+.space-card {
+  transition: transform .26s cubic-bezier(.2,.8,.2,1);
+}
+.book-card:nth-child(odd):hover,
+.category:nth-child(odd):hover,
+.space-card:nth-child(odd):hover {
+  transform: translateY(-8px) rotate(-1.25deg) scale(1.012);
+}
+.book-card:nth-child(even):hover,
+.category:nth-child(even):hover,
+.space-card:nth-child(even):hover {
+  transform: translateY(-8px) rotate(1.25deg) scale(1.012);
+}
+
+/* On garde l'effet intérieur du visuel, mais un peu moins fort */
+.book-card:hover .book-card__visual {
+  transform: translateY(-4px) scale(1.02);
+}
+.category:hover {
+  box-shadow: 0 28px 62px rgba(123, 101, 87, .18), inset 0 0 0 1px rgba(255,255,255,.14);
+}
+.space-card:hover {
+  box-shadow:
+    0 32px 70px rgba(129, 105, 90, .18),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .hours-modal__head h3 {
+    font-size: 28px;
+  }
+  .book-card:hover .book-card__visual::after,
+  .category:hover::after,
+  .quote-card:hover::after {
+    border-top-width: 30px;
+    border-left-width: 30px;
+  }
+  .book-card:nth-child(odd):hover,
+  .category:nth-child(odd):hover,
+  .space-card:nth-child(odd):hover,
+  .book-card:nth-child(even):hover,
+  .category:nth-child(even):hover,
+  .space-card:nth-child(even):hover {
+    transform: translateY(-6px) rotate(0.7deg) scale(1.01);
+  }
+}

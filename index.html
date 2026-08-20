@@ -108,10 +108,10 @@
             </div>
           </div>
 
-          <div class="floating-card floating-card--top">
+          <button class="floating-card floating-card--top floating-card--hours" id="heroHoursCard" type="button" aria-label="Voir tous les horaires">
             <span class="pulse-dot"></span>
             <div><small>Aujourd'hui</small><strong>Ouvert jusqu'à 19h</strong></div>
-          </div>
+          </button>
           <div class="floating-card floating-card--bottom">
             <span class="float-icon">✦</span>
             <div><small>Le conseil du libraire</small><strong>Une sélection chaque semaine</strong></div>
@@ -318,6 +318,21 @@
       <div id="modalContent"></div>
     </div>
   </div>
+
+  
+  <div class="modal hours-modal" id="hoursModal" aria-hidden="true">
+    <div class="modal__backdrop" data-hours-close></div>
+    <div class="modal__card hours-modal__card">
+      <button class="round-btn modal__close" data-hours-close>×</button>
+      <div class="hours-modal__head">
+        <small>HORAIRES</small>
+        <h3>Horaires de la librairie</h3>
+        <p>Retrouvez les horaires de la semaine pour <strong>Des livres, Des mots</strong>.</p>
+      </div>
+      <div class="hours-modal__grid" id="hoursModalGrid"></div>
+    </div>
+  </div>
+
 
   <div class="toast" id="toast"></div>
 

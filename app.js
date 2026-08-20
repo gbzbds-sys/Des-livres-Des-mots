@@ -66,6 +66,36 @@ function renderSpaces() {
   `).join("");
 }
 
+
+function renderHoursModal() {
+  const grid = $("#hoursModalGrid");
+  if (!grid || !C.hours) return;
+  const day = new Date().getDay(); // 0 = dimanche
+  const mondayIndex = day === 0 ? 6 : day - 1;
+  grid.innerHTML = C.hours.map((h, i) => `
+    <div class="hours-modal__row ${i === mondayIndex ? "is-today" : ""}">
+      <strong>${h[0]}</strong>
+      <span>${h[1]}</span>
+    </div>
+  `).join("");
+}
+
+function openHoursModal() {
+  const modal = $("#hoursModal");
+  if (!modal) return;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("no-scroll");
+}
+
+function closeHoursModal() {
+  const modal = $("#hoursModal");
+  if (!modal) return;
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("no-scroll");
+}
+
 function renderBooks() {
   $("#booksRow").innerHTML = C.books.map((b,i) => `
     <article class="book-card" data-book="${i}">
@@ -154,7 +184,7 @@ function toast(msg) {
 }
 
 $("#year").textContent = new Date().getFullYear();
-hydrateShop(); renderHours(); renderCategories(); renderSpaces(); renderBooks(); renderSearch();
+hydrateShop(); renderHours(); renderHoursModal(); renderCategories(); renderSpaces(); renderBooks(); renderSearch();
 
 $("#booksNext").addEventListener("click",()=>$("#booksRow").scrollBy({left:560,behavior:"smooth"}));
 $("#booksPrev").addEventListener("click",()=>$("#booksRow").scrollBy({left:-560,behavior:"smooth"}));
@@ -163,7 +193,7 @@ $("#searchClose").addEventListener("click",closeSearch);
 $("#searchOverlay").addEventListener("click",e=>{ if(e.target===$("#searchOverlay")) closeSearch(); });
 $("#searchInput").addEventListener("input",e=>renderSearch(e.target.value));
 $$("[data-modal-close]").forEach(el=>el.addEventListener("click",closeBook));
-document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); }});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeSearch(); closeBook(); closeHoursModal(); }});
 
 $("#menuBtn").addEventListener("click",()=>$("#mobileNav").classList.toggle("open"));
 $$(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>$("#mobileNav").classList.remove("open")));
@@ -176,3 +206,15 @@ const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add("visible"); observer.unobserve(e.target);} });
 },{threshold:.12});
 $$(".reveal").forEach(el=>observer.observe(el));
+
+
+const heroHoursCard = $("#heroHoursCard");
+if (heroHoursCard) heroHoursCard.addEventListener("click", openHoursModal);
+$$("[data-hours-close]").forEach(el => el.addEventListener("click", closeHoursModal));
+const hoursModal = $("#hoursModal");
+if (hoursModal) {
+  hoursModal.addEventListener("click", e => {
+    if (e.target === hoursModal) closeHoursModal();
+  });
+}
+

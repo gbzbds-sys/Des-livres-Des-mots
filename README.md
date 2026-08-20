@@ -105,3 +105,11 @@ Ajouts :
 - effet de lumière qui glisse sur les boutons au hover ;
 - effet “coin de page qui se tourne” sur les cartes principales ;
 - hover plus vivant sur la navigation et certains liens.
+
+
+## V6 correctifs
+
+- effet de coin de page réduit et retiré des grosses cartes où il gênait ;
+- carte “Ouvert jusqu’à 19h” rendue cliquable ;
+- clic sur cette carte = ouverture d’une fenêtre avec toute la grille horaire ;
+- hover plus vivant : les cartes penchent légèrement dans des sens alternés.
