@@ -166,3 +166,16 @@ Le site actuel est un site vitrine. Si paiement, achat en ligne ou livraison son
 - Chaque élément ouvre un descriptif au survol.
 - Sur mobile / clic, le descriptif s’ouvre aussi au tap.
 - Le bandeau garde le style premium du site.
+
+
+## V10 Ultra Premium
+
+Améliorations visuelles majeures :
+- hero plus haut de gamme et plus éditorial ;
+- chips premium sous l’introduction ;
+- header plus élégant avec effet verre léger ;
+- hover et animations plus cohérents sur la navigation ;
+- cartes livres, catégories, espaces et services nettement enrichis ;
+- section contact, newsletter et footer plus luxueux ;
+- micro-mouvements de parallaxe sur les zones visuelles principales ;
+- meilleure cohérence globale entre le logo, les couleurs et les sections.

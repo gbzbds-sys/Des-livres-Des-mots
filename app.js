@@ -294,3 +294,32 @@ document.addEventListener("click", e => {
   }
 });
 
+
+
+function attachPremiumParallax(wrapperSelector, targetSelector, strength = 10) {
+  const wrapper = $(wrapperSelector);
+  const target = targetSelector ? wrapper?.querySelector(targetSelector) : wrapper;
+  if (!wrapper || !target || !window.matchMedia("(pointer:fine)").matches) return;
+
+  let raf = null;
+
+  wrapper.addEventListener("mousemove", (e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      target.style.transform = `rotateY(${x * strength * 0.45}deg) rotateX(${y * -strength * 0.35}deg) translate3d(${x * 6}px, ${y * 6}px, 0)`;
+    });
+  });
+
+  wrapper.addEventListener("mouseleave", () => {
+    cancelAnimationFrame(raf);
+    target.style.transform = "";
+  });
+}
+
+attachPremiumParallax(".hero__visual", ".book-stage", 10);
+attachPremiumParallax(".story-visual", ".story-frame", 5);
+
